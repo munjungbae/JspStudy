@@ -51,4 +51,20 @@
     <servlet-name>myFirstServlet</servlet-name>
     <url-pattern>/myFirstServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>hello</servlet-name>
+    <servlet-class>co.kh.dev.Hello</servlet-class>
+    <init-param>
+      <param-name>phone</param-name>
+      <param-value>010-8864-4457</param-value>
+    </init-param>
+    <init-param>
+      <param-name>id</param-name>
+      <param-value>munjungbae</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>hello</servlet-name>
+    <url-pattern>/hello.do</url-pattern>
+  </servlet-mapping>
 </web-app>
