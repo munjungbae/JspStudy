@@ -14,7 +14,7 @@ public class LogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		//1. 세션값이 존재하는지 확인 만약 존재한다면 세션 값 해제
+		// 1. 세션값이 존재하는지 확인 만약 존재한다면 세션 값 해제
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			session.invalidate();

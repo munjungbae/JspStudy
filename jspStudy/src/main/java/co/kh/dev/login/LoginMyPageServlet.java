@@ -10,37 +10,36 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/loginServlet.do")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/loginMyPageServlet.do")
+public class LoginMyPageServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		//1. 사용자 정보 가져오기
-		//2. DB에서 조회하기
-		//3. 화면을 출력해주기
+
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
 
 		try {
 			// 1. 세션정보 가져오기 (세션객체가 있으면 세션 객체를 주고 없으면 null 값 리턴)
 			HttpSession session = request.getSession(false);
+
 			// 2. 세션 정보가 있으면 id와 password 를 읽어온다. 없다면 로그인창으로 가게 한다(sendRedirect)
 			if (session != null) {
+				String name = (String) session.getAttribute("name");
 				System.out.println("세션 고유 아이디 " + session.getId()); // 세션 고유번호 , 테이블 내 id가 아님
 				// 3. 사용자 정보 아이디와 패스워드 가져오기
-				String id = (String) session.getAttribute("id");
 				// 사용자 정보를 화면에 출력한다.
 				out.println("<html>");
 				out.println("<body>");
 				out.println("<table align='center' border='1' width='300'>");
 				out.println("<tr>");
-				out.println("<td width='300' align='center'>" + id + " 님 로그인 되었습니다.</td>");
+				out.println("<td width='300' align='center'>" + name + " 님 로그인 되었습니다.</td>");
 				out.println("</tr>");
 				out.println("<tr>");
 				out.println("<td align='center'>");
-				out.println("<a href='/jspStudy/registerList.do'>회원정보</a>");
+				out.println("<a href='/jspStudy/bbs/loginUpdate.html'>정보수정</a>");
 				out.println("<a href='/jspStudy/logout.do'>로그아웃</a>");
 				out.println("</td>");
 				out.println("</tr>");
