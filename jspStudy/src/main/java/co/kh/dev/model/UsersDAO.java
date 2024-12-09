@@ -119,8 +119,8 @@ public class UsersDAO {
 		return (rs == 0) ? false : true;
 	}
 
-	public Boolean updateDB(UsersVO uvo) {
 		Connection con = DBUtility.dbCon();
+		public Boolean updateDB(UsersVO uvo) {
 		PreparedStatement pstmt = null;
 		int rs = 0;
 		try {
