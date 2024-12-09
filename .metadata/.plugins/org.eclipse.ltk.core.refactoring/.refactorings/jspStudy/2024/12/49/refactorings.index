@@ -21,3 +21,18 @@
 1733383790240	Delete element
 1733383978396	Delete elements
 1733383984115	Delete element
+1733450956215	Rename resource 'member.html'
+1733450960457	Move 'registerUpdate.html' to 'bbs'
+1733450965071	Delete element
+1733450994613	Rename resource 'registerUpdate.html'
+1733451380128	Copy file
+1733451412578	Rename type 'LoginMypageServlet'
+1733451425706	Rename compilation unit 'LoginMyPadeServlet.java'
+1733454952665	Rename type 'MemberVO'
+1733454963532	Rename type 'MemberDAO'
+1733455047173	Copy compilation unit
+1733467648994	Delete element
+1733468806430	Delete element
+1733471456202	Delete element
+1733474141750	Rename resource '123e.jsp'
+1733474155236	Move 'LoginCheck.jsp' to 'login'
