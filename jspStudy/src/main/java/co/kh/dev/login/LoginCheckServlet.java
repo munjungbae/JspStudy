@@ -49,7 +49,7 @@ public class LoginCheckServlet extends HttpServlet {
 					session.setAttribute("pass", rUvo.getPass());
 					session.setAttribute("name", rUvo.getName());
 					response.sendRedirect("/jspStudy/loginMyPageServlet.do");
-				} else if (id != rUvo.getId()) {
+				} else if (id.equals(rUvo.getId())) {
 					out.println("<h2 style='text-align:center'>비밀번호가 일치하지 않습니다. </h2>");
 					out.println("<a href='/jspStudy/loginServlet.do'><input type='button' value='뒤로가기'></a>");
 					out.println("</body>");

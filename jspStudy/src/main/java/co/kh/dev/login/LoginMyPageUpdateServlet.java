@@ -37,6 +37,7 @@ public class LoginMyPageUpdateServlet extends HttpServlet {
 			try {
 				UsersDAO uDao = new UsersDAO();
 				UsersVO uVo = new UsersVO(id, pass, name, idValue);
+				UsersVO rUvo = uDao.selectLoginCheckDB(uVo);
 				returnFlag = uDao.updateDB(uVo);
 				
 
@@ -57,7 +58,12 @@ public class LoginMyPageUpdateServlet extends HttpServlet {
 			} catch (Exception e) {
 				System.out.println(e.toString());
 			}
-			if (returnFlag == true) {
+			if (id.equals(idValue)) {
+				out.println("<h2>" + id + "는 이미 존재하는 아이디 입니다.</h2>");
+				out.println("<a href='/jspStudy//loginMyPageServlet.do'><input type='button' value='뒤로가기'></a>");
+				out.println("</body>");
+				out.println("</html>");
+			} else {
 				out.println("<table align=center width=700 border=1>");
 				out.println("<th colspan='6'> 정보 수정이 완료 되었습니다</th>");
 				out.println("<tr>");
@@ -77,11 +83,6 @@ public class LoginMyPageUpdateServlet extends HttpServlet {
 				sessionValue.setAttribute("id", id);
 				sessionValue.setAttribute("pass", pass);
 				sessionValue.setAttribute("name", name);
-			} else {
-				out.println("<h2>" + id + "는 이미 존재하는 아이디 입니다.</h2>");
-				out.println("<a href='/jspStudy//loginMyPageServlet.do'><input type='button' value='뒤로가기'></a>");
-				out.println("</body>");
-				out.println("</html>");
 			}
 		} else {
 			out.println("<h2>페이지에 대한 권한이 없습니다..</h2>");

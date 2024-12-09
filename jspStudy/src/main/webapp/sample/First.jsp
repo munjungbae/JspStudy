@@ -6,7 +6,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 	<h1>
 		여기서 아래에 존재하는 멤버변수를 사용 할 수 있다. <%=declation%>
 		<br>
