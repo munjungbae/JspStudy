@@ -1,8 +1,13 @@
 *.class
+.metadata/
+/.metadata/
+*.metadata/
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 /.metadata/
+.metadata/
+*.metadata/
 # Created by https://www.toptal.com/developers/gitignore/api/java
 # Edit at https://www.toptal.com/developers/gitignore?templates=java
 
