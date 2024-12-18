@@ -10,6 +10,7 @@ StudentDAO sdao = new StudentDAO();
 <jsp:setProperty name="svo" property="*" />
 <%
 boolean flag = sdao.insertDB(svo);
+session.setAttribute("name", svo.getName());
 %>
 <html>
 <head>

@@ -16,7 +16,7 @@ try {
 <html>
 <head>
 <title>My Board</title>
-<link href="list.css?timestamp=<%=System.currentTimeMillis()%>"
+<link href="write.css?timestamp=<%=System.currentTimeMillis()%>"
 	rel="stylesheet" type="text/css" />
 <script language="javascript"
 	src="script.js?timestamp=<%=System.currentTimeMillis()%>">
@@ -77,51 +77,54 @@ try {
 				<a href=""><li>자료실</li></a>
 			</ul>
 		</nav>
-		<div class="write">
-		<form method="post" name="writeForm" action="writeCheck.jsp">
-			<input type="hidden" name="num" value="<%=num%>"> <input
-				type="hidden" name="ref" value="<%=ref%>"> <input
-				type="hidden" name="step" value="<%=step%>"> <input
-				type="hidden" name="depth" value="<%=depth%>">
-			<table>
-				<tr>
-					<td><a href="list.jsp">글목록</a></td>
-				</tr>
-				<tr>
-					<td>이름</td>
-					<td><input type="text"name="writer" /></td>
-				</tr>
-				<tr>
-					<td>이메일</td>
-					<td><input type="text"name="email" /></td>
-				</tr>
-				<tr>
-					<td>제목</td>
-					<td>
-						<%
-						if (request.getParameter("num") == null) {
-						%> <input type="text" name="subject" /> <%
+		<div class=write_content>
+			<h4 class="title">자유게시판</h4>
+			<div class="write">
+				<form method="post" name="writeForm" action="writeCheck.jsp">
+					<input type="hidden" name="num" value="<%=num%>"> <input
+						type="hidden" name="ref" value="<%=ref%>"> <input
+						type="hidden" name="step" value="<%=step%>"> <input
+						type="hidden" name="depth" value="<%=depth%>">
+					<div class="name_mail">
+						<table>
+							<tr>
+								<td><input type="text" name="writer" class="writer" placeholder="작성자 이름"/></td>
+							</tr>
+						</table>
+						<table>
+							<tr>
+								<td><input type="password" name="pass" class="pass" placeholder="비밀번호"/></td>
+							</tr>
+							<tr>
+						</table>
+					</div>
+					<table>
+						<tr>
+							<td>
+								<%
+								if (request.getParameter("num") == null) {
+								%> <input type="text" name="subject" class="subject" placeholder="제목을 입력 해 주세요"/> <%
  } else {
  %> <input type="text" name="subject" value="[답변]" /> <%
  }
  %>
-					</td>
-				</tr>
-				<tr>
-					<td>내용</td>
-					<td><textarea name="content" rows="13" cols="50"></textarea></td>
-				</tr>
-				<tr>
-					<td>비밀번호</td>
-					<td><input type="password" name="pass" /></td>
-				</tr>
-				<tr>
-					<td><input type="submit" value="글쓰기" /> <input type="reset"
-						value="다시작성" /> <input type="button" value="목록"
+							</td>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td><textarea name="content" class="text_area" rows="20" cols="105" placeholder="내용을 입력 해 주세요"></textarea></td>
+						</tr>
+					</table>
+
+					<td><input type="submit" class="submit" value="글쓰기" /> <input type="reset" class="reset"
+						value="다시작성" /> <input type="button" value="목록" class="list"
 						onClick="window.location='list.jsp'"></td>
-				</tr>
-			</table>
-		</form>
+					</tr>
+				</form>
+			</div>
+		</div>
+
 		<!-- 예외처리<2> -->
 		<%
 		} else {
@@ -135,7 +138,6 @@ try {
 		} catch (Exception e) {
 		}
 		%>
-		</div>
 	</div>
 </body>
 </html>

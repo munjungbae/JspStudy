@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%
+	String name =(String) session.getAttribute("name");
+	%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +14,7 @@
 	src="../script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
 </head>
 <body class="loginBody">
+<input type="hidden" name="name" class="name" value="<%= name %>"/>
 	<!-- 		<form class="login" name="login" method="post" action="loginCheck.jsp"> -->
 	<form class="login" name="login" method="post" action="../Zoo.jsp">
 		<table class="top">

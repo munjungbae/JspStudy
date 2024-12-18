@@ -4,9 +4,11 @@
 int banner_num = (int) Math.floor(Math.random() * (4 - 1 + 1) + 1);
 String id = request.getParameter("id");
 String pass = request.getParameter("pass");
+String name = request.getParameter("name");
 
 session.setAttribute("id", id);
 session.setAttribute("pass", pass);
+session.setAttribute("name", name);
 %>
 <head>
 <meta charset="UTF-8">
@@ -62,7 +64,6 @@ function onload() {
 }
 </script>
 <body onload="onload()">
-	<input type="hidden" name="id" value="id">
 	<%
 	if (id == null) {
 	%>
@@ -150,8 +151,7 @@ function onload() {
 				<i class="fa-solid fa-ticket"></i><span>구매하기</span>
 			</button>
 			<ul class="myPage">
-				<li class="dropdown"><%=id%>님 환영합니다. <input type="hidden"
-					name="id" value="<%=id%>">
+				<li class="dropdown"><%=id%>님 환영합니다.
 					<div class="dropdown_content">
 						<a href="#">마이페이지</a> <a href="./login/logout.jsp">로그아웃</a>
 					</div></li>

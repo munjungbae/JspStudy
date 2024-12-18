@@ -154,7 +154,7 @@ number = count - (currentPage - 1) * pageSize;
 %>
 <div class="content">
 	<nav>
-		<h4>문의사항</h4>
+		<h4>커뮤니티</h4>
 		<ul>
 			<a href="list.jsp"><li>자유게시판</li></a>
 			<a href=""><li>자료실</li></a>
@@ -163,12 +163,8 @@ number = count - (currentPage - 1) * pageSize;
 
 	<div class="board">
 		<div class="main_top">
-			<b>글목록(전체 글:<%=count%>)
-			</b>
-			<table>
-				<tr>
-					<td><a href="wirte.jsp">글쓰기</a></td>
-			</table>
+			<b>전체 글 : <%=count%>
+			</b> <a href="wirte.jsp"><i class="fa-solid fa-pencil"></i></a>
 		</div>
 		<%
 		if (count == 0) {
@@ -181,34 +177,32 @@ number = count - (currentPage - 1) * pageSize;
 		} else {
 		%>
 		<table class="table_top">
-			<thead>
-					<th>번 호</th>
-					<th>제 목</th>
-					<th>작성자</th>
-					<th>작성일</th>
-					<th>조 회</th>
-					<th>IP</th>
+			<thead class="table_head">
+				<th width='100px'>번 호</th>
+				<th width=700px'>제 목</th>
+				<th width='100px'>작성자</th>
+				<th width='300px'>작성일</th>
+				<th width='100px'>조 회</th>
 			</thead>
 			<%
 			for (BoardVO article : boardList) {
 			%>
 			<tbody>
-					<td><%=number--%></td>
-					<td><a
-						href="content.jsp?num=<%=article.getNum()%>&pageNum=<%=currentPage%>">
-							<!-- 수정<6> --> <%
+				<td><%=number--%></td>
+				<td><a
+					href="content.jsp?num=<%=article.getNum()%>&pageNum=<%=currentPage%>">
+						<!-- 수정<6> --> <%
  //6 DEPTH 값에 따라 HTML코드에는 공백이 비례해야 함. EX) DEPTH = 1 , 공백 = 5 DEPTH = 2, 공백 = 10
  int wid = 0;
  if (article.getDepth() > 0) {
  	wid = 5 * (article.getDepth());
  %> <img src="images/level.gif" width="<%=wid%>" height="16"> <img
-							src="images/re.gif"> <%
+						src="images/re.gif"> <%
  }
  %> <%=article.getSubject()%></a></td>
-					<td><a href="mailto:<%=article.getEmail()%>"> <%=article.getWriter()%></a></td>
-					<td><%=sdf.format(article.getRegdate())%></td>
-					<td><%=article.getReadcount()%></td>
-					<td><%=article.getIp()%></td>
+				<td><%=article.getWriter()%></td>
+				<td><%=sdf.format(article.getRegdate())%></td>
+				<td><%=article.getReadcount()%></td>
 			</tbody>
 			<%
 			}

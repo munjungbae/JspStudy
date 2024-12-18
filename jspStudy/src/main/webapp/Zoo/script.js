@@ -30,7 +30,7 @@ function idCheck() {
 		document.register.id.focus();
 	} else {
 		input.nextSibling.textContent = ``;
-		url = "idCheck.jsp"
+		url = "idCheck.jsp?id="
 		window.open(url, "post", "width=500,height=500");
 	}
 }
@@ -83,11 +83,13 @@ function sendAddress(zipcode, sido, gugun, dong, bunji) {
 function sendID() {
 	let value = document.login.id.value;
 	if (value === "") {
-			alert("아이디를 입력해 주세요.");
-			document.zipForm.dong.focus();
-			return;
-		}
-	document.login.submit();
+		alert("아이디를 입력해 주세요.");
+		document.zipForm.dong.focus();
+		return;
+	} else {
+		document.login.submit();
+		opener.location.reload();
+	}
 }
 /*$("#login_ID").click(function() {
 	var ww = 400;

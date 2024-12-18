@@ -131,6 +131,7 @@ a {
 
 .dropdown_content {
 	position: absolute;
+	background-color: #f7f7f7;
 	display: none;
 	z-index: 2;
 	font-size: 15px;
@@ -143,7 +144,7 @@ a {
 }
 
 .dropdown_content a:hover {
-	background-color: #f7f7f765;
+	background-color: rgb(247, 247, 247, 0.5);
 	color: rgba(0, 0, 0, 0.301);
 	z-index: 2;
 }

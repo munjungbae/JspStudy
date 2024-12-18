@@ -208,53 +208,102 @@ nav a {
 	color: black;
 }
 
-.board>table {
+.write {
+	position: relative;
 	width: 850px;
 	border-top: 2px solid rgb(0, 128, 0);
 }
 
-.main_top {
+.name_mail {
 	position: relative;
 	display: flex;
-	justify-content: space-between;
-	margin: 0px 5px 5px 5px;
 }
 
-.center>a {
-	padding: 2px 5px;
+.title {
+	position: relative;
+	margin: 1px 5px 13px 5px;
 }
 
-.center>a:hover {
-	background-color: rgba(0, 0, 0, 0.2);
-}
-
-.table_top {
-	border-collapse: collapse;
-	margin-bottom: 10px;
-}
-
-td {
-	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+.writer, .pass {
+	width: 200px;
 	height: 35px;
+	margin-left: 35px;
+	background-color: #f7f7f7;
+	border: none;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.411);
+	font-size: 15px;
+	outline: none;
+	text-align: left;
 	font-size: 13px;
+	background-color: #f7f7f7;
+	margin: 20px 0px 20px 35px;
+}
 
+.subject {
+	width: 775px;
+	height: 35px;
+	margin-left: 35px;
+	background-color: #f7f7f7;
+	border: none;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.411);
+	font-size: 15px;
+	outline: none;
+	text-align: left;
+	font-size: 13px;
+	height: 35px;
+	margin-bottom: 20px;
+}
+
+.text_area {
+	width: 775px;
+	margin-left: 35px;
+	background-color: #f7f7f7;
+	text-align: left;
+	outline: none;
+	font-size: 13px;
+	margin-bottom: 20px;
+}
+
+.submit, .reset, .list {
+	background-color: #0f5906;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	height: 35px;
+	font-weight: 1000;
+	cursor: pointer;
+	width: 150px;
+	position: relative;
+	
+}
+
+.submit:hover, .reset:hover, .list:hover {
+	color: #0f5906;
+	background-color: #f7f7f7;
+}
+
+.register_user, .reset {
+	background-color: #0f5906;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	height: 35px;
+	font-weight: 1000;
+	cursor: pointer;
+	width: 173px;
+	margin: 15px auto;
+}
+
+.register_user:active, .reset:active {
+	color: #0f5906;
+	background-color: #f7f7f7;
 }
 
 th {
-	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-	height: 35px;
-	font-size: 14px;
-	background-color: rgba(0, 0, 0, 0.2);
+	height: 30px;
+	width: 100px;
 }
 
-.fa-pencil {
-	background-color: black;
-	color: white;
-	border: none;
-	border-radius: 10px;
-	font-weight: 1000;
-	padding: 7px;
-}
-.fa-pencil:hover {
-		background-color: rgba(0, 0, 0, 0.301);
+td {
+	height: 30px;
 }
