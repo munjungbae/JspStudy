@@ -397,7 +397,7 @@
 
 
 		</main>
-		<aside></aside>
+
 	</div>
 
 </body>

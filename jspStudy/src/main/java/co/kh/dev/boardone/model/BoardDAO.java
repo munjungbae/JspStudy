@@ -29,20 +29,19 @@ public class BoardDAO {
 	}
 
 	private final String SELECT_SQL = "SELECT * FROM BOARD ORDER BY NUM DESC";
-	
+
 	private final String SELECT_START_END_SQL = "select * from "
 			+ "(select rownum as rnum, num, writer,email, subject, pass,regdate, readcount, ref, step, depth, content, ip from "
-			+ "(select * from board order by ref desc, step asc))"
-			+ " where rnum>=? and rnum<=?";
+			+ "(select * from board order by ref desc, step asc))" + " where rnum>=? and rnum<=?";
 
 	private final String SELECT_COUNT_SQL = "SELECT COUNT(*) AS COUNT FROM BOARD";
 	private final String SELECT_MAX_NUM_SQL = "select max(num) as NUM from board";
 	private final String SELECT_ONE_SQL = "SELECT * FROM BOARD WHERE NUM = ?";
 	private final String SELECT_PASS_SQL = "select count(*) count from board where num = ? and pass = ?";
-	
-	private final String INSERT_SQL = "insert into board(num, writer, email, subject, pass, regdate, ref, step, depth, content, ip) "
-			+ "values(board_seq.nextval,?,?,?,?,?,?,?,?,?,?)";
-	
+
+	private final String INSERT_SQL = "insert into board(num, writer, subject, pass, regdate, ref, step, depth, content) "
+			+ "values(board_seq.nextval,?,?,?,?,?,?,?,?)";
+
 	private final String UPDATE_STEP_SQL = "update board set step=step+1 where ref= ? and step > ?";
 	private final String UPDATE_SQL = "update board set writer= ?, email= ?, subject= ?, content= ? where num= ?";
 	private final String UPDATE_READCOUNT_SQL = "update board set readcount=readcount+1 where num = ?";
@@ -96,15 +95,14 @@ public class BoardDAO {
 		try {
 			pstmt = con.prepareStatement(INSERT_SQL);
 			pstmt.setString(1, bvo.getWriter());
-			pstmt.setString(2, bvo.getEmail());
-			pstmt.setString(3, bvo.getSubject());
-			pstmt.setString(4, bvo.getPass());
-			pstmt.setTimestamp(5, bvo.getRegdate());
-			pstmt.setInt(6, ref);
-			pstmt.setInt(7, step);
-			pstmt.setInt(8, depth);
-			pstmt.setString(9, bvo.getContent());
-			pstmt.setString(10, bvo.getIp());
+			pstmt.setString(2, bvo.getSubject());
+			pstmt.setString(3, bvo.getPass());
+			pstmt.setTimestamp(4, bvo.getRegdate());
+			pstmt.setInt(5, ref);
+			pstmt.setInt(6, step);
+			pstmt.setInt(7, depth);
+			pstmt.setString(8, bvo.getContent());
+
 			count = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -324,25 +322,25 @@ public class BoardDAO {
 		Connection con = cp.dbCon();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		ArrayList<BoardVO> boardList = new ArrayList<BoardVO>(end-start+1);//end-start+1 ArrayList의 개수를 10개로 먼저 지정
+		ArrayList<BoardVO> boardList = new ArrayList<BoardVO>(end - start + 1);// end-start+1 ArrayList의 개수를 10개로 먼저 지정
 		try {
 			pstmt = con.prepareStatement(SELECT_START_END_SQL);
 			pstmt.setInt(1, start);
 			pstmt.setInt(2, end);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-				int num				= (rs.getInt("num"));
-				String writer 	 	= (rs.getString("writer"));
-				String eamil 		= (rs.getString("email"));
-				String subject		= (rs.getString("subject"));
-				String pass 		= (rs.getString("pass"));
-				Timestamp regdate	= (rs.getTimestamp("regdate"));
-				int readcount 		= (rs.getInt("readcount"));
-				int ref 			= (rs.getInt("ref"));
-				int step 			= (rs.getInt("step"));
-				int depth 			= (rs.getInt("depth"));
-				String content		= (rs.getString("content"));
-				String ip 			= (rs.getString("ip"));
+				int num = (rs.getInt("num"));
+				String writer = (rs.getString("writer"));
+				String eamil = (rs.getString("email"));
+				String subject = (rs.getString("subject"));
+				String pass = (rs.getString("pass"));
+				Timestamp regdate = (rs.getTimestamp("regdate"));
+				int readcount = (rs.getInt("readcount"));
+				int ref = (rs.getInt("ref"));
+				int step = (rs.getInt("step"));
+				int depth = (rs.getInt("depth"));
+				String content = (rs.getString("content"));
+				String ip = (rs.getString("ip"));
 
 				BoardVO bvo = new BoardVO(num, writer, eamil, subject, pass, readcount, ref, step, depth, regdate,
 						content, ip);
