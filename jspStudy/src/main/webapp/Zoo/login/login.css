@@ -3,8 +3,9 @@
 body {
 	background-color: #f7f7f7;
 }
+
 .loginBody {
-margin: 70px;
+	margin: 70px;
 }
 
 a {
@@ -28,7 +29,7 @@ a {
 	margin: 20px;
 }
 
-.ID, .pwd{
+.ID, .pwd {
 	background-color: #f7f7f7;
 	border: none;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.411);
@@ -75,6 +76,7 @@ span {
 	background-color: #f7f7f7;
 	margin-top: 10px;
 }
+
 .phone2, .phone3 {
 	border: none;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.411);
@@ -84,6 +86,7 @@ span {
 	left: 10px;
 	background-color: #f7f7f7;
 }
+
 .phone1 {
 	border: none;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.411);
@@ -92,17 +95,18 @@ span {
 	background-color: #f7f7f7;
 	font-size: 15px;
 }
+
 .idCheck, .find {
-cursor: pointer;
-height: 25px;
-border-radius: 5px;
-background-color: #f7f7f7;
-border: 1px solid black;
+	cursor: pointer;
+	height: 25px;
+	border-radius: 5px;
+	background-color: #f7f7f7;
+	border: 1px solid black;
 }
 
 .idCheck:active, .find:active {
-	border: 1px solid  rgba(0, 0, 0, 0.411);
-	color :  rgba(0, 0, 0, 0.411);
+	border: 1px solid rgba(0, 0, 0, 0.411);
+	color: rgba(0, 0, 0, 0.411);
 }
 
 .register_user, .reset {
@@ -117,7 +121,29 @@ border: 1px solid black;
 	margin: 15px auto;
 }
 
-.register_user:active, .reset:active{
+.register_user:active, .reset:active {
+	color: #0f5906;
+	background-color: #f7f7f7;
+}
+
+.footer {
+	display: flex;
+	flex-direction: column;
+}
+
+.login_ID, .register_ID {
+	background-color: #0f5906;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	height: 35px;
+	font-weight: 1000;
+	cursor: pointer;
+	width: 115px;
+	margin: 15px 0px 10px 0px;
+}
+
+.login_ID:active, .register_ID:active {
 	color: #0f5906;
 	background-color: #f7f7f7;
 }

@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 * {
 	box-sizing: border-box;
 	margin: 0px;
@@ -165,3 +167,74 @@ a {
 	list-style: none;
 	margin-left: 10px;
 }
+
+.content {
+	display: flex;
+	position: relative;
+	margin: 40px 270px;
+}
+
+nav {
+	position: relative;
+	margin-right: 10px;
+	width: 200px;
+}
+
+nav h4 {
+	border-bottom: 2px solid rgb(0, 128, 0);
+	padding-bottom: 14px;
+}
+
+nav ul {
+	background-color: rgb(238, 238, 238);
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	list-style: none;
+}
+
+nav li {
+	padding: 5px;
+	font-size: 13px;
+}
+
+nav li:hover {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+nav a {
+	color: black;
+}
+.board > table{
+	width: 850px;	
+ 	border-top: 2px solid rgb(0, 128, 0);
+	height: 60px;
+}
+
+.main_top {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	margin: 0px 5px 10px 5px;
+}
+
+.center > a {
+	padding : 2px 5px;
+}
+
+.center > a:hover {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+.write{
+	position: relative;
+	width: 850px;	
+ 	border-top: 2px solid rgb(0, 128, 0);
+	height: 60px;
+}
+.table_top{
+	border: 1px solid black;
+	height: 100px;
+}
+.table_top > thead > tr{
+	border: 1px solid black;
+}
+

@@ -13,6 +13,9 @@ int check = sdao.selectLoginCheck(svo);
 %>
 <%
 if (check == 1) {//로그인 성공
+/* 	session.setAttribute("id", id);
+	session.setAttribute("pass", pass); */
+	
 	session.setAttribute("id", id);
 	session.setAttribute("pass", pass);
 	response.sendRedirect("../myPageZoo.jsp");

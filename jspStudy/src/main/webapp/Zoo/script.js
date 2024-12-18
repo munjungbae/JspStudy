@@ -6,7 +6,7 @@ function loginWindow() {
 	var top = Math.ceil((window.screen.height - 450) / 2);
 
 	url = "../Zoo/login/login.jsp";
-	window.open(url, ' ', 'width=' + 450 + ',height=' + 350 + ',left=' + left + ',top=' + top + ',scrollbars=no,resizable=no,toolbar=no,titlebar=no,menubar=no,location=no');
+	window.open(url, ' ', 'width=' + 450 + ',height=' + 360 + ',left=' + left + ',top=' + top + ',scrollbars=no,resizable=no,toolbar=no,titlebar=no,menubar=no,location=no');
 }
 function registerWindow() {
 	self.close();
@@ -14,7 +14,7 @@ function registerWindow() {
 	var top = Math.ceil((window.screen.height - 450) / 2);
 
 	url = "../login/register.jsp";
-	window.open(url, '_blank', 'width=' + 519 + ',height=' + 600 + ',left=' + left + ',top=' + top);
+	window.open(url, '_blank', 'width=' + 519 + ',height=' + 620 + ',left=' + left + ',top=' + top);
 }
 
 function idCheck() {
@@ -29,6 +29,7 @@ function idCheck() {
 		input.nextSibling.style.opacity = `0.6`;
 		document.register.id.focus();
 	} else {
+		input.nextSibling.textContent = ``;
 		url = "idCheck.jsp"
 		window.open(url, "post", "width=500,height=500");
 	}
@@ -78,6 +79,25 @@ function sendAddress(zipcode, sido, gugun, dong, bunji) {
 	opener.document.register.address1.value = address;
 	self.close();
 }
+
+function sendID() {
+	let value = document.login.id.value;
+	if (value === "") {
+			alert("아이디를 입력해 주세요.");
+			document.zipForm.dong.focus();
+			return;
+		}
+	document.login.submit();
+}
+/*$("#login_ID").click(function() {
+	var ww = 400;
+	var wh = 250;
+
+	var top = (screen.availHeight - wh) / 2;
+	var left = (screen.availWidth - ww) / 2;
+
+	window.open("../Zoo.jsp", "window"	'width=' + ww + ", height=" + wh + ", top=" + top + ", left=" + left + ", toolbar=no, menubar=no, scrollbars=no, resizable=no");
+});*/
 
 
 

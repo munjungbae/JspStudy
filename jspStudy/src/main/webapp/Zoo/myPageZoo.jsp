@@ -1,9 +1,12 @@
+<%@page import="co.kh.dev.memberone.model.StudentVO"%>
+<%@page import="co.kh.dev.memberone.model.StudentDAO"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
-<!DOCTYPE html>
+
 <%
+int num = (int) Math.floor(Math.random() * (4 - 1 + 1) + 1);
 request.setCharacterEncoding("UTF-8");
-String id = (String) session.getAttribute("id");
-String pass = (String) session.getAttribute("pass");
+String id = request.getParameter("id");
+String pass = request.getParameter("pass");
 %>
 <head>
 <meta charset="UTF-8">
@@ -41,10 +44,10 @@ String pass = (String) session.getAttribute("pass");
 						<a href="#">관람 유의사항</a> <a href="#">운영시간</a> <a href="#">매장안내</a>
 						<a href="#">오시는길</a>
 					</div></li>
-				<li class="dropdown"><a href="#" class="dropdown_button">소통/공지</a>
+				<li class="dropdown"><a href="list.jsp"
+					class="dropdown_button">커뮤니티</a>
 					<div class="dropdown_content">
-						<a href="#">공지사항</a> <a href="#">1:1문의</a> <a href="#">자유게시판</a>
-
+						<a href="list.jsp">자유게시판</a> <a href="#">자료실</a>
 					</div></li>
 			</ul>
 
@@ -54,18 +57,22 @@ String pass = (String) session.getAttribute("pass");
 				<i class="fa-solid fa-ticket"></i><span>구매하기</span>
 			</button>
 			<ul class="myPage">
-			<li class="dropdown"><%= id %>님 환영합니다.
+				<li class="dropdown"><%=id%>님 환영합니다. <input type="hidden"
+					name="id" value="<%=id%>">
 					<div class="dropdown_content">
 						<a href="#">마이페이지</a> <a href="./login/logout.jsp">로그아웃</a>
-					</div>
-					</li>
+					</div></li>
 			</ul>
-			
 		</div>
 	</div>
 
 	<aside>
-		<%@ include file="./banner.jsp"%>
+		<div class="img_change">
+			<i class="fa-solid fa-caret-left"></i> <img
+				src="./img/lulu<%=num%>.png" alt="" class="banner_change"> <i
+				class="fa-solid fa-caret-right"></i>
+		</div>
 	</aside>
 </body>
 </html>
+
