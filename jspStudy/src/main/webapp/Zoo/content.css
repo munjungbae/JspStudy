@@ -208,7 +208,7 @@ nav a {
 	color: black;
 }
 
-.write{
+.write {
 	position: relative;
 	width: 850px;
 	border-top: 2px solid rgb(0, 128, 0);
@@ -219,12 +219,52 @@ nav a {
 	margin: 1px 5px 13px 5px;
 }
 
+.table1 {
+	border: 1px solid black;
+	display: flex;
+	justify-content: space-between;
+	font-size: 15px;
+	font-weight: 700;
+	padding: 5px 0px;
+	font-size: 15px;
+	margin: 0px 0px 0px 35px;
+}
+
 .table2 {
 	border: 1px solid black;
 	display: flex;
-	flex-direction:row;
-	justify-content: space-between;
+	justify-content: end;
+	font-weight: 100;
+	font-size: 11px;
+	margin: 0px 0px 0px 35px;
+}
+
+.date {
+	font-size: 11px;
+	font-weight: 100;
+}
+
+.table3 {
+	border: 1px solid black;
+	display: flex;
+	font-weight: 700;
+	font-size: 15px;
+	padding: 5px 0px;
+	margin: 0px 0px 0px 35px;
+}
+
+.table4 {
+	border: 1px solid black;
+	display: flex;
 	font-size: 13px;
+	margin: 0px 0px 0px 35px;
+}
+
+.table5 {
+	border: 1px solid black;
+	display: flex;
+	font-size: 13px;
+	margin: 0px 0px 0px 35px;
 }
 
 .submit, .reset, .list {
@@ -237,7 +277,6 @@ nav a {
 	cursor: pointer;
 	width: 150px;
 	position: relative;
-	
 }
 
 .submit:hover, .reset:hover, .list:hover {

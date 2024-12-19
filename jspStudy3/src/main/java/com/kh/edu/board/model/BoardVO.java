@@ -16,6 +16,11 @@ public class BoardVO {
 	private String content;
 	private String ip;
 
+	public BoardVO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public BoardVO(int num, String writer, String email, String subject, String pass, int readcount, int ref, int step,
 			int depth, Timestamp regdate, String content, String ip) {
 		super();
@@ -31,12 +36,6 @@ public class BoardVO {
 		this.regdate = regdate;
 		this.content = content;
 		this.ip = ip;
-	}
-
-
-	public BoardVO() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public int getNum() {
@@ -133,6 +132,13 @@ public class BoardVO {
 
 	public void setIp(String ip) {
 		this.ip = ip;
+	}
+
+	@Override
+	public String toString() {
+		return "BoardVO [num=" + num + ", writer=" + writer + ", email=" + email + ", subject=" + subject + ", pass="
+				+ pass + ", readcount=" + readcount + ", ref=" + ref + ", step=" + step + ", depth=" + depth
+				+ ", regdate=" + regdate + ", content=" + content + ", ip=" + ip + "]";
 	}
 
 }

@@ -9,39 +9,30 @@ import java.util.Map;
 import java.util.Properties;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.Servlet;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.kh.edu.board.action.CommandAction;
 
-@WebServlet("*.do")
 public class ControllerServlet extends HttpServlet {
-	// 1. key : ~~~.do, value : 컨트롤 객체, 서비스 객체, DAO객체 를넣는다.
-	// map <key, value>
-	// 부르는 최종 값 /board/list.do=com.kh.edu.board.action.ListAction
-	// 키 값 : "board/list.do", 객체 : Class.Load(com.kh.edu.board.action.ListAction);
+	// 1. board/list.do=com.kh.edu.board.action.ListAction
+	// 키값: "board/list.do" 객체: Class.Load(com.kh.edu.board.action.ListAction);
 	private Map<String, Object> commandMap = new HashMap<String, Object>();
 
-	// CommandPro.properties 키 값과 value값을 가져와서 미리 객체를 만들고 commandMap에 저장한다.(Pre
+	// 2. CommandPro.properties 키값과 value값을 가져와서 미리 객체를 만들고 commandMap 저장해놓는다(Pre
 	// Loading)
+	@SuppressWarnings("deprecation")
 	public void init(ServletConfig config) throws ServletException {
-		// 2. props = config.getInitParameter("propertyConfig");
-		// web.xmp에 있는 param-name이 propertyConfig이므로
-		// <param-value>CommandPro.properties</param-value> 이 호출
+
 		String props = config.getInitParameter("propertyConfig");
-		// 3. CommandPro.properties 파일을 가져오기 위한 경로 설정
 		Properties pr = new Properties();
 		FileInputStream f = null;
 		String path = config.getServletContext().getRealPath("/WEB-INF");
 		try {
-			// Command.properties파일의 내용을 읽어옴
 			f = new FileInputStream(new File(path, props));
-			// Command.properties파일의 정보를 Properties객체에 저장
 			pr.load(f);
 		} catch (IOException e) {
 			throw new ServletException(e);
@@ -52,17 +43,17 @@ public class ControllerServlet extends HttpServlet {
 				} catch (IOException ex) {
 				}
 		}
-		// /board/list.do=com.kh.edu.board.action.ListAction 키 값에 "board/list.do" Set 등록
+		// board/list.do=com.kh.edu.board.action.ListAction 키값에 "board/list.do" Set 등록
 		Iterator<Object> keyIter = pr.keySet().iterator();
 		while (keyIter.hasNext()) {
-			// key 값 "board/list.do"
+			// key값 : "board/list.do"
 			String command = (String) keyIter.next();
-			// value 값 com.kh.edu.board.action.ListAction
+			// value값 : "com.kh.edu.board.action.ListAction"
 			String className = pr.getProperty(command);
 			try {
-				// com.kh.edu.board.action.ListAction 해당 문자열 클래스를 가져온다
+				// com.kh.edu.board.action.ListAction 해당 문자열을 클래스 가져온다..
 				Class commandClass = Class.forName(className);
-				// com.kh.edu.board.action.ListAction 객체를 만듦
+				// com.kh.edu.board.action.ListAction 객체를 만든다.
 				Object commandInstance = commandClass.newInstance();// 해당클래스의 객체를 생성
 				// Map객체인 commandMap에 객체 저장
 				commandMap.put(command, commandInstance);
@@ -76,21 +67,22 @@ public class ControllerServlet extends HttpServlet {
 		}
 	}
 
-	private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+	private void processRequest(HttpServletRequest request, HttpServletResponse response)
+			throws IOException, ServletException {
 		ActionForward af = null;
 		CommandAction com = null;
 		try {
 			// http://localhost:8080/jspStudy3/board/index.do?name=kdj
-			// command = "jspStudy3/board/index.do"
+			// command = "/jspStudy3/board/index.do"
 			String command = request.getRequestURI();
 			// request.getContextPath() == "/jspStudy3"
 			if (command.indexOf(request.getContextPath()) == 0) {
 				// command = "/board/index.do"
 				command = command.substring(request.getContextPath().length());
 			}
-
 			com = (CommandAction) commandMap.get(command);
 			af = com.execute(request, response);
+
 			if (af.isRedirect() == true) {
 				response.sendRedirect(af.getUrl());
 			} else {

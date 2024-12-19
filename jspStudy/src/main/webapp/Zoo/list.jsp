@@ -164,7 +164,7 @@ number = count - (currentPage - 1) * pageSize;
 	<div class="board">
 		<div class="main_top">
 			<b>전체 글 : <%=count%>
-			</b> <a href="wirte.jsp"><i class="fa-solid fa-pencil"></i></a>
+			</b> <a href="write.jsp"><i class="fa-solid fa-pencil"></i></a>
 		</div>
 		<%
 		if (count == 0) {

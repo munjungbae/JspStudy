@@ -53,7 +53,7 @@ public final class ConnectionPool {
 		free = new ArrayList<Connection>(initialCons);
 		used = new ArrayList<Connection>(initialCons);
 
-		String filePath = "C:\\dev\\eclipseWorkspace\\jspStudy2\\src\\main\\java\\com\\kh\\dev\\common\\db.properties";
+		String filePath = "C:\\dev\\eclipseWorkspace\\jspStudy3\\src\\main\\java\\com\\kh\\edu\\common\\db.properties";
 		Properties pt = new Properties();
 		try {
 			pt.load(new FileReader(filePath));

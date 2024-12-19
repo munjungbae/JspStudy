@@ -20,7 +20,7 @@
 </script>
 <body onload="begin()">
 	<main>
-		<form name="myForm" method="post" action="deleteProc.jsp" onsubmit="return checkPass()">
+		<form name="myForm" method="post" action="deleteProc.do" onsubmit="return checkPass()">
 			<table width="260" border="1" align="center">
 				<tr>
 					<td colspan="2" align="center">

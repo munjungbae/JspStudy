@@ -73,7 +73,7 @@ try {
 	</div>
 	<div class="content">
 		<nav>
-			<h4>문의사항</h4>
+			<h4>커뮤니티</h4>
 			<ul>
 				<a href="list.jsp"><li>자유게시판</li></a>
 				<a href=""><li>자료실</li></a>

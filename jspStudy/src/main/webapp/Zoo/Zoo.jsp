@@ -2,13 +2,9 @@
 <!DOCTYPE html>
 <%
 int banner_num = (int) Math.floor(Math.random() * (4 - 1 + 1) + 1);
-String id = request.getParameter("id");
-String pass = request.getParameter("pass");
-String name = request.getParameter("name");
-
-session.setAttribute("id", id);
-session.setAttribute("pass", pass);
-session.setAttribute("name", name);
+String id = (String) session.getAttribute("id");
+String pass = (String) session.getAttribute("pass");
+String name = (String) session.getAttribute("name");
 %>
 <head>
 <meta charset="UTF-8">
@@ -69,8 +65,8 @@ function onload() {
 	%>
 	<div class="banner">
 		<div class="banner_left">
-			<a href="Zoo.jsp" target="_self"><i class="fa-solid fa-cat"></i></a> <a
-				href="Zoo.jsp"><p>123</p></a>
+			<a href="Zoo.jsp" target="_self"><i class="fa-solid fa-cat"></i></a>
+			<a href="Zoo.jsp"><p>123</p></a>
 		</div>
 		<div class="banner_right">
 			<ul>
@@ -107,8 +103,8 @@ function onload() {
 	<aside>
 		<div class="img_change">
 			<i class="fa-solid fa-caret-left"></i> <img
-				src="./img/lulu<%=banner_num%>.png" alt="" class="banner_change"> <i
-				class="fa-solid fa-caret-right"></i>
+				src="./img/lulu<%=banner_num%>.png" alt="" class="banner_change">
+			<i class="fa-solid fa-caret-right"></i>
 		</div>
 	</aside>
 </body>
@@ -119,8 +115,8 @@ function onload() {
 <body onload="onload()">
 	<div class="banner">
 		<div class="banner_left">
-			<a href="Zoo.jsp" target="_self"><i class="fa-solid fa-cat"></i></a> <a
-				href="Zoo.jsp"><p>123</p></a>
+			<a href="Zoo.jsp" target="_self"><i class="fa-solid fa-cat"></i></a>
+			<a href="Zoo.jsp"><p>123</p></a>
 		</div>
 		<div class="banner_right">
 			<ul>
@@ -162,8 +158,8 @@ function onload() {
 	<aside>
 		<div class="img_change">
 			<i class="fa-solid fa-caret-left"></i> <img
-				src="./img/lulu<%=banner_num%>.png" alt="" class="banner_change"> <i
-				class="fa-solid fa-caret-right"></i>
+				src="./img/lulu<%=banner_num%>.png" alt="" class="banner_change">
+			<i class="fa-solid fa-caret-right"></i>
 		</div>
 	</aside>
 </body>

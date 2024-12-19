@@ -80,16 +80,16 @@ function sendAddress(zipcode, sido, gugun, dong, bunji) {
 	self.close();
 }
 
-function sendID() {
+function sendID(){
 	let value = document.login.id.value;
 	if (value === "") {
 		alert("아이디를 입력해 주세요.");
-		document.zipForm.dong.focus();
+		document.login.id.focus();
 		return;
-	} else {
-		document.login.submit();
-		opener.location.reload();
 	}
+		alert("zz");
+		opener.location.reload();
+
 }
 /*$("#login_ID").click(function() {
 	var ww = 400;

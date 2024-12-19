@@ -1,14 +1,18 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.List"%>
+<%@page import="com.kh.edu.board.model.BoardVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="view/color.jsp"%>
 <%
-	int currentPage = (Integer) request.getAttribute("currentPage");
-	int startRow = (Integer) request.getAttribute("startRow");
-	int endRow = (Integer) request.getAttribute("endRow");
-	int count = (Integer) request.getAttribute("count");
-	int pageSize = (Integer) request.getAttribute("pageSize");
-	int number = (Integer) request.getAttribute("number");
-	int articleList = (Integer) request.getAttribute("articleList");
+int currentPage = (Integer) request.getAttribute("currentPage");
+int startRow = (Integer) request.getAttribute("startRow");
+int endRow = (Integer) request.getAttribute("endRow");
+int count = (Integer) request.getAttribute("count");
+int pageSize = (Integer) request.getAttribute("pageSize");
+int number = (Integer) request.getAttribute("number");
+List<BoardVO> aritcleList = (List<BoardVO>) request.getAttribute("articleList");
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 %>
 <!DOCTYPE html>
 <html>
@@ -23,7 +27,7 @@
 		<table width="700">
 			<tr>
 				<td align="right" bgcolor="<%=value_c%>"><a
-					href="writeForm.jsp">글쓰기</a></td>
+					href="writeForm.do">글쓰기</a></td>
 		</table>
 		<%
 		if (count == 0) {
@@ -46,7 +50,7 @@
 				<td align="center" width="100">IP</td>
 			</tr>
 			<%
-			for (BoardVO article : boardList) {
+			for (BoardVO article : aritcleList) {
 			%>
 			<tr height="30">
 				<td align="center" width="50"><%=number--%></td>
@@ -92,18 +96,18 @@
 			}
 			if (startPage > pageBlock) {
 		%>
-		<a href="list.jsp?pageNum=<%=startPage - pageBlock%>">[이전]</a>
+		<a href="list.do?pageNum=<%=startPage - pageBlock%>">[이전]</a>
 		<%
 		}
 		for (int i = startPage; i <= endPage; i++) {
 		if (currentPage == i) {
 		%>
-		<a href="list.jsp?pageNum=<%=i%>"><b>[<%=i%>]
+		<a href="list.do?pageNum=<%=i%>"><b>[<%=i%>]
 		</b> </a>
 		<%
 		} else {
 		%>
-		<a href="list.jsp?pageNum=<%=i%>">[<%=i%>]
+		<a href="list.do?pageNum=<%=i%>">[<%=i%>]
 		</a>
 		<%
 		}

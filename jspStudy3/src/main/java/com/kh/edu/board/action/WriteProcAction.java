@@ -11,7 +11,7 @@ import com.kh.edu.board.control.ActionForward;
 import com.kh.edu.board.model.BoardDAO;
 import com.kh.edu.board.model.BoardVO;
 
-public class ListAction implements CommandAction {
+public class WriteProcAction implements CommandAction {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {

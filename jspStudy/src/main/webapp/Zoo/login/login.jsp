@@ -16,7 +16,7 @@
 <body class="loginBody">
 <input type="hidden" name="name" class="name" value="<%= name %>"/>
 	<!-- 		<form class="login" name="login" method="post" action="loginCheck.jsp"> -->
-	<form class="login" name="login" method="post" action="../Zoo.jsp">
+	<form class="login" name="login" method="post" action="loginCheck.jsp">
 		<table class="top">
 			<tr class="title">
 				<th>회원 로그인</th>
@@ -36,7 +36,7 @@
 			</tbody>
 			<tr>
 				<!-- <td><input type="button" value="로그인" onClick="sendID(id)" class="login_ID"/></td> -->
-				<td><input type="button" value="로그인" onClick="sendID()" id="login_ID" class="login_ID"/></td>
+				<td><input type="submit" value="로그인" id="login_ID" class="login_ID"/></td>
 				<td><input type="button" value="회원가입"
 					onClick="registerWindow()" class="register_ID" /></td>
 			</tr>
