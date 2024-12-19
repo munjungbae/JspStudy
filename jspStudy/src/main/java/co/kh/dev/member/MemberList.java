@@ -31,7 +31,6 @@ public class MemberList extends HttpServlet {
 		String MEMBER_SELECT = "SELECT * FROM MEMBER ORDER BY NAME, ID ASC";
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		;
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "webuser", "123456");
