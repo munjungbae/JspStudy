@@ -11,7 +11,6 @@ public class LoginFormAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		
 		return new ActionForward("/mvcmem/login.jsp", false);
 	}
 
