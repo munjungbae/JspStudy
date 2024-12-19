@@ -28,6 +28,17 @@ function dongCheck() {
 	document.zipForm.submit();
 }
 
+function begin() {
+	document.myForm.pass.focus();
+}
+function checkPass() {
+	if (!document.myForm.pass.value) {
+		alert("비밀번호를 입력하지 않았습니다");
+		document.myForm.pass.focus();
+		return false;
+	}
+}
+
 /*주소내용을 받아와 해당 창을 띄워준 브라우저의 각각 벨류값에 값을 넣어주는 함수*/
 function sendAddress(zipcode, sido, gugun, dong, bunji) {
 	var address = sido + " " + gugun + " " + dong + " " + bunji;
@@ -38,7 +49,7 @@ function sendAddress(zipcode, sido, gugun, dong, bunji) {
 
 /*회원가입이 정상적으로 입력되었는지 검증하는 함수*/
 function inputCheck() {
-	
+
 	if (document.regForm.id.value == "") {
 		alert("아이디를 입력해 주세요.");
 		document.regForm.id.focus();

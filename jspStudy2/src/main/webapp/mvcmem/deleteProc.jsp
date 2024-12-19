@@ -1,36 +1,29 @@
-<%@ page contentType="text/html;charset=euc-kr"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 
-<jsp:useBean id="sdao" class="co.kh.dev.memberone.model.StudentDAO" />
-<jsp:useBean id="svo" class="co.kh.dev.memberone.model.StudentVO" />
+<link href="style.css" type="text/css" rel="stylesheet" />
+<script language="JavaScript"
+	src="script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
 <html>
 <head>
-<title>È¸¿øÅ»Åð</title>
+<title>íšŒì›íƒˆí‡´</title>
 </head>
 <%
-request.setCharacterEncoding("UTF-8");
+boolean flag = (boolean) request.getAttribute("flag");
 
-String id = (String) session.getAttribute("id");
-String sessionPass = (String) session.getAttribute("pass");
-String pass = request.getParameter("pass");
-
-svo.setId(id);
-svo.setPass(pass);
-boolean flag = sdao.deleteDB(svo);
 if (flag == true) {
-	session.invalidate();
 %>
-<meta http-equiv="Refresh" content="3;url=login.jsp">
+<meta http-equiv="Refresh" content="3;url=login.do">
 <body>
 	<main>
 		<p>
-			È¸¿øÁ¤º¸°¡ »èÁ¦µÇ¾ú½À´Ï´Ù<br></br> ¾È³çÈ÷ °¡¼¼¿ä ! ¤Ð.¤Ð<br></br> 3ÃÊÈÄ¿¡ ·Î±×ÀÎ ÆäÀÌÁö·Î ÀÌµ¿ÇÕ´Ï´Ù
+			íšŒì›ì •ë³´ê°€ ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤<br></br> ì•ˆë…•ížˆ ê°€ì„¸ìš” ! ã… .ã… <br></br> 3ì´ˆí›„ì— ë¡œê·¸ì¸ íŽ˜ì´ì§€ë¡œ ì´ë™í•©ë‹ˆë‹¤
 		</p>
 	</main>
 	<%
 	} else {
 	%>
 	<script>
-		alert("ºñ¹Ð¹øÈ£°¡ ¸ÂÁö ¾Ê½À´Ï´Ù");
+		alert("ë¹„ë°€ë²ˆí˜¸ê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤");
 		history.go(-1);
 	</script>
 	<%

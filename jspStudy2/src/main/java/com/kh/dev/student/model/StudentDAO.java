@@ -26,7 +26,7 @@ public class StudentDAO {
 	private final String SELECT_ZIPCODE_SQL = "SELECT ZIPCODE, SIDO, GUGUN, DONG, BUNJI FROM ZIPCODE WHERE DONG LIKE ?";
 	private final String INSERT_STUDENT = "INSERT INTO STUDENT VALUES(?,?,?,?,?,?,?,?,?,?)";
 	private final String UPDATE_STUDENT = "UPDATE STUDENT SET PASS=?, PHONE2=?, PHONE3=?, EMAIL=?, ZIPCODE=?, ADDRESS1=?, ADDRESS2=? WHERE ID = ?";
-	private final String DELETE_STUDENT = "DELETE FROM STUDENT WHERE ID = ?";
+	private final String DELETE_STUDENT = "DELETE FROM STUDENT WHERE ID = ? AND PASS = ?";
 	// 전체를 DB에서 출력
 
 	public ArrayList<StudentVO> selectDB() {
@@ -232,17 +232,19 @@ public class StudentDAO {
 		ConnectionPool cp = ConnectionPool.getInstance();
 		Connection con = cp.dbCon();
 		PreparedStatement pstmt = null;
+		
 		int count = 0;
 		try {
 			pstmt = con.prepareStatement(DELETE_STUDENT);
 			pstmt.setString(1, svo.getId());
-
+			pstmt.setString(2, svo.getPass());
+			
 			count = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			cp.dbClose(con, pstmt);
 		}
-		return (count != 0) ? (true) : (false);
+		return (count > 0) ? (true) : (false);
 	}
 }
