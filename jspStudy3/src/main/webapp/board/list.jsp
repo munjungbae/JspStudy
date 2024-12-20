@@ -18,7 +18,10 @@ SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 <html>
 <head>
 <title>게시판</title>
-<link href="	style.css" rel="stylesheet" type="text/css">
+<link href="style.css?timestamp=<%=System.currentTimeMillis()%>"
+	rel="stylesheet" type="text/css" />
+<script language="javascript"
+	src="script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
 </head>
 <body bgcolor="<%=bodyback_c%>">
 	<main>
@@ -26,8 +29,7 @@ SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		</b>
 		<table width="700">
 			<tr>
-				<td align="right" bgcolor="<%=value_c%>"><a
-					href="writeForm.do">글쓰기</a></td>
+				<td align="right" bgcolor="<%=value_c%>"><a href="writeForm.do">글쓰기</a></td>
 		</table>
 		<%
 		if (count == 0) {
@@ -55,7 +57,7 @@ SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 			<tr height="30">
 				<td align="center" width="50"><%=number--%></td>
 				<td width="250"><a
-					href="content.jsp?num=<%=article.getNum()%>&pageNum=<%=currentPage%>">
+					href="content.do?num=<%=article.getNum()%>&pageNum=<%=currentPage%>">
 						<!-- 수정<6> --> <%
  //6 DEPTH 값에 따라 HTML코드에는 공백이 비례해야 함. EX) DEPTH = 1 , 공백 = 5 DEPTH = 2, 공백 = 10
  int wid = 0;

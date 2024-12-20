@@ -11,6 +11,7 @@ import co.kh.dev.common.ConnectionPool;
 public class StudentDAO {
 	private final String SELECT_ID_SQL = "SELECT COUNT(*) AS COUNT FROM STUDENT WHERE ID = ?";
 	private final String SELECT_LOGIN_SQL = "SELECT * FROM STUDENT WHERE ID = ?";
+
 	private final String SELECT_ZIPCODE_SQL = "SELECT ZIPCODE, SIDO, GUGUN, DONG, BUNJI FROM ZIPCODE WHERE DONG LIKE ?";
 	private final String INSERT_STUDENT = "INSERT INTO STUDENT VALUES(?,?,?,?,?,?,?,?,?,?)";
 	private final String UPDATE_STUDENT = "UPDATE STUDENT SET PASS=?, PHONE2=?, PHONE3=?, EMAIL=?, ZIPCODE=?, ADDRESS1=?, ADDRESS2=? WHERE ID = ?";
