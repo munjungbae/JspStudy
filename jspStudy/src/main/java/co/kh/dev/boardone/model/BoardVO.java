@@ -15,6 +15,8 @@ public class BoardVO {
 	private Timestamp regdate;
 	private String content;
 	private String ip;
+	private String id;
+	private String name;
 
 	public BoardVO(int num, String writer, String email, String subject, String pass, int readcount, int ref, int step,
 			int depth, Timestamp regdate, String content, String ip) {
@@ -33,10 +35,25 @@ public class BoardVO {
 		this.ip = ip;
 	}
 
-
 	public BoardVO() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public int getNum() {
