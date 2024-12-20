@@ -1,0 +1,23 @@
+package co.kh.dev.mvc.action;
+
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import co.kh.dev.mvc.control.ActionForward;
+
+public abstract class IndexAction implements Action {
+
+	@Override
+	public class IndexAction implements Action{
+		 public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		 System.out.println("IndexAction의 execute() 수행됨!");
+		 return new ActionForward("index.jsp", false);
+		 }
+		}
+
+}
+System.out.println("사용자 정보를 받고 > 데이터 베이스 정보를 조회 > 결과를 request에 입력 > 화면.JSP 설정 > foward,Redirect 인지 결정 후 전송하는 IndexAction");
+
+return new ActionForward("index.jsp",false);

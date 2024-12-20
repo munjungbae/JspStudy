@@ -1,0 +1,24 @@
+1734574063273	Rename package 'com.kh.dev.common'
+1734574072801	Rename package 'com.kh.edu.dev.common'
+1734575283922	Rename type 'Action'
+1734575316125	Copy package
+1734575332206	Rename package 'com.kh.edu.board.controller'
+1734575358452	Delete element
+1734575494474	Delete element
+1734579840470	Rename package 'com.kh.dev.common'
+1734580757061	Move 'board' to 'webapp'
+1734585994558	Copy compilation unit
+1734586076231	Delete element
+1734586088836	Copy compilation unit
+1734586097491	Copy compilation unit
+1734586107010	Copy compilation unit
+1734586117055	Copy compilation unit
+1734586126803	Copy compilation unit
+1734586461279	Delete element
+1734587117292	Rename type 'DeleteFromAction'
+1734589752629	Rename resource 'writeProc.jsp'
+1734589769706	Rename type 'UpdateProcAction'
+1734589774173	Rename type 'WriteProcAction'
+1734589778378	Rename type 'DeleteProcAction'
+1734592148159	Rename resource 'updateProc.jsp'
+1734593037142	Rename resource 'deleteProc.jsp'

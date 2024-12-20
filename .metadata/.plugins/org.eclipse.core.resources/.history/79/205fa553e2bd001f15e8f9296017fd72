@@ -1,0 +1,179 @@
+* {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+
+body {
+	width: 1580px;
+	position: absolute;
+	background-color: #f7f7f7;
+	margin: 0 150px;
+}
+
+.banner {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px;
+	margin: 0px 100px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.banner_left {
+	position: relative;
+	list-style: none;
+	display: flex;
+	align-items: center;
+	font-size: 45px;
+	font-weight: 900;
+	left: 10px;
+}
+
+.fa-cat {
+	margin: 0px 10px 0px 0px;
+}
+
+.banner_right ul {
+	position: relative;
+	list-style: none;
+	display: flex;
+	right: 230px;
+	font-size: 20px;
+	font-weight: 900;
+}
+
+.banner_right li {
+	margin: 0px 20px;
+	padding: 20px 0px;
+}
+
+.input_button {
+	display: flex;
+	align-items: center;
+}
+
+.ticket {
+	background-color: #f7f7f7;
+	padding: 7px;
+	border-radius: 50px;
+	font-weight: 900;
+	font-size: 15px;
+	text-align: center;
+}
+
+.fa-ticket {
+	font-size: 15px;
+}
+
+.ticket:hover {
+	border-color: rgba(0, 0, 0, 0.301);;
+	cursor: pointer;
+	font-weight: 900;
+	color: rgba(0, 0, 0, 0.301);
+}
+
+.ticket>span {
+	margin: 0px 0px 0px 5px;
+}
+
+.fa-user {
+	font-size: 25px;
+	margin: 0px 10px 0px 15px;
+}
+
+.fa-user:hover {
+	cursor: pointer;
+	font-weight: 900;
+	color: rgba(0, 0, 0, 0.301);
+}
+
+.img_change {
+	position: relative;
+	height: 513px;
+}
+
+.img_change img {
+	position: relative;
+	top: 15px;
+	width: 88%;
+	height: 100%;
+	border-radius: 30px;
+}
+
+.fa-caret-left {
+	color: rgba(0, 0, 0, 0);
+	position: absolute;
+	padding: 15.7% 8%;
+	top: 15px;
+	left: 6%;
+	z-index: 1;
+	cursor: pointer;
+	border-radius: 30px;
+}
+
+.fa-caret-right {
+	color: rgba(0, 0, 0, 0);
+	position: absolute;
+	padding: 15.7% 6%;
+	top: 15px;
+	right: 6%;
+	z-index: 1;
+	cursor: pointer;
+	border-radius: 30px;
+}
+
+.dropdown_content {
+	position: absolute;
+	background-color: #f7f7f7;
+	display: none;
+	z-index: 0;
+	font-size: 13px;
+	width: 123px;
+	top: 60px;
+	font-weight: 300;
+}
+
+.dropdown_button:hover {
+	color: rgba(0, 0, 0, 0.401);
+}
+
+.dropdown_content a:hover {
+	transition: all .3s;
+	background-color: rgb(38, 78, 2);
+	color: white;
+	z-index: 2;
+}
+
+.dropdown:hover  .dropdown_content {
+	display: block;
+	z-index: 2;
+	transition: all .3s;
+}
+
+.dropdown:hover .dropdown_content a {
+	transition: all .3s;
+	z-index: 2;
+	display: block;
+}
+
+.dropdown_content a {
+	text-align: left;
+	padding: 8px;
+}
+
+.myPage > li{
+	padding: 20px 5px;
+}
+.myPage {
+	position: relative;
+	font-size: 15px;
+	font-weight: 400;
+	list-style: none;
+}

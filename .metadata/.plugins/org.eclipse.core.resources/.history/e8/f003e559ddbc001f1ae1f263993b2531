@@ -1,0 +1,5 @@
+package co.kh.dev.mvc.action;
+
+public interface Action {
+
+}

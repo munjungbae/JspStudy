@@ -1,0 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+	<aside>
+		<div class="img_change">
+			<i class="fa-solid fa-caret-left"></i>
+			 <img src="./img/lulu<%=num%>.png" alt="" class="banner_change"> 
+			<i class="fa-solid fa-caret-right"></i>
+		</div>
+	</aside>

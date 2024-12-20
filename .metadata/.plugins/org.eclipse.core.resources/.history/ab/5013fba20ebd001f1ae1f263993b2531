@@ -1,0 +1,5 @@
+package com.kh.dev.student.action;
+
+public class LoginProcAction {
+
+}

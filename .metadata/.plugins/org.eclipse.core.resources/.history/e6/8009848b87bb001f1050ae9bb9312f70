@@ -1,0 +1,42 @@
+<%@page import="co.kh.dev.memberone.model.StudentDAO"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
+<!DOCTYPE html>
+<%
+request.setCharacterEncoding("utf-8");
+StudentDAO sdao = new StudentDAO();
+%>
+<jsp:useBean id="svo" class="co.kh.dev.memberone.model.StudentVO" />
+<jsp:setProperty name="svo" property="*" />
+<%
+boolean flag = sdao.insertDB(svo);
+%>
+<html>
+<head>
+<title>회원가입 확인</title>
+</head>
+<link href="./login.css" rel="stylesheet" type="text/css">
+<main>
+	<%
+		if (flag) {
+		%>
+	<script>
+		alert('회원 가입이 완료 되었습니다.');
+		javascript: self.close();
+	</script>
+	<%
+		} else {
+		%>
+	<script>
+		alert('다시 입력 바랍니다.');
+	<% var left = Math.ceil((window.screen.width - 750) / 2);
+			var top = Math.ceil((window.screen.height - 650) / 2);
+			url = "zipCheck.jsp?check=y";
+			window.open(url, "post", "width=" + 450 + ",height=" + 350 + ",left=" + left + ",top="+ top + "directories=no,status=yes,scrollbars=yes,menubar=no");%>
+		
+	</script>
+	<%
+		}
+		%>
+</main>
+</body>
+</html>

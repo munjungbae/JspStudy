@@ -1,0 +1,22 @@
+<%@ page contentType="text/html; charset=euc-kr"%>
+<%@ page session="true"%>
+<%
+request.setAttribute("name", "ÀÌ½ÂÀç");
+%>
+<html>
+<head>
+<title>EL Object</title>
+</head>
+<body>
+<ul>
+	<li${name}></li>
+	<li{requestScope.name}></li>
+	<li${name}></li>
+	
+</ul>
+	
+	<br></br>
+	<br></br>{param.code}
+	<br></br>
+</body>
+</html>

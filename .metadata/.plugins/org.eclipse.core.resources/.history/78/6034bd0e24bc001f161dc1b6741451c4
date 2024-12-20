@@ -1,0 +1,54 @@
+<%@page import="java.io.IOException"%>
+<%@page import="java.io.File"%>
+<%@page import="org.apache.commons.fileupload.FileItem"%>
+<%@page import="org.apache.commons.fileupload.DiskFileUpload"%>
+<%@page import="org.apache.commons.fileupload.FileUpload"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%
+//1.사용자가 전송할때 form에 enctype="multipart/form-data"
+if (FileUpload.isMultipartContent(request)) {
+	String temporaryDir = "C:\\temp";
+	DiskFileUpload fileUpload = new DiskFileUpload();
+	fileUpload.setRepositoryPath(temporaryDir);
+	// 최대 1메가까지 업로드 가능
+	fileUpload.setSizeMax(1024 * 1024);
+	// 한번에 100K 까지는 메모리에 저장.
+	fileUpload.setSizeThreshold(1024 * 100);
+	/* FileItem의 리스트 */
+	java.util.List fileItemList = fileUpload.parseRequest(request);
+	for (int i = 0; i < fileItemList.size(); i++) {
+		FileItem fileItem = (FileItem) fileItemList.get(i);
+		if (fileItem.isFormField()) {// 파일 이외의 파라미터
+		  out.println("폼 파라미터:"); 	
+		  out.println(fileItem.getFieldName() +" = "+ fileItem.getString()+"<br>");
+		} else { // 파일인 경우
+			out.println("파일:"); 
+			out.println(fileItem.getFieldName() 
+					+" = "+ fileItem.getString()+"(" +fileItem.getSize() +"bytes) <br>");
+			if (fileItem.isInMemory()) {
+				out.println("메모리에 저장 <br>"); 
+			} else {
+				out.println("디스크에 저장 <br>"); 
+			}
+
+			String filepath = application.getRealPath("upload");
+			// 업로드한 파일이 존재하는 경우
+			if (fileItem.getSize() > 0) {
+				int idx = fileItem.getName().lastIndexOf("\\");
+				if (idx == -1) {
+					idx = fileItem.getName().lastIndexOf("/");
+				}
+				String fileName = fileItem.getName().substring(idx + 1);
+				try {
+					File uploadedFile = new File(filepath, fileName);
+					fileItem.write(uploadedFile);
+				} catch (IOException ex) {
+				// 예외 처리
+				}
+			}// 업로드한 파일이 존재하는 경우
+		}// 파일인 경우
+	}//end of for
+} else { //1.사용자가 전송할때 form에 enctype="multipart/form-data"
+	out.println("인코딩 타입이 multipart/form-data가 아님.");
+}
+%>

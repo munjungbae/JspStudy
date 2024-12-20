@@ -1,0 +1,78 @@
+1733710442010	Copy file
+1733710471876	Rename resource 'DBUtilty.jsp'
+1733711474241	Delete element
+1733711627308	Delete element
+1733712872597	Copy files
+1733726811273	Copy file
+1733733535161	Delete elements
+1733733549861	Delete element
+1733733575583	Delete element
+1733791550821	Move 'viewModule.jsp' to 'viewModule'
+1733791559435	Rename resource 'viewModule.jsp'
+1733791655274	Move 'viewModule' to 'main'
+1733791818300	Move 'viewModule' to 'forward'
+1733792654929	Move 'C.jsp' to 'forward'
+1733792657214	Move 'C.jsp' to 'viewModule'
+1733792660495	Move 'A.jsp' to 'forward'
+1733792661513	Move 'B.jsp' to 'forward'
+1733792662441	Move 'C.jsp' to 'forward'
+1733794810942	Move 'template.jsp' to 'temp'
+1733794815373	Move 'template.jsp' to 'template'
+1733796363623	Delete element
+1733798607275	Delete element
+1733798796280	Rename package 'co.kh.dev.tempmember'
+1733798799790	Delete element
+1733798806605	Delete element
+1733798809455	Delete element
+1733799736107	Copy compilation unit
+1733799747436	Rename type 'UsersDAO'
+1733807750704	Delete element
+1733807834720	Copy compilation unit
+1733808744036	Copy file
+1733812781048	Move 'commons-collections4-4.5.0-M2.jar' to 'WEB-INF'
+1733812782464	Move 'commons-dbcp2-2.13.0.jar' to 'WEB-INF'
+1733812785405	Move 'commons-pool2-2.12.0.jar' to 'WEB-INF'
+1733812805181	Move 'web.xml' to 'lib'
+1733812808020	Move 'web.xml' to 'WEB-INF'
+1733813036815	Move 'commons-collections4-4.5.0-M2.jar' to 'lib'
+1733813038013	Move 'commons-dbcp2-2.13.0.jar' to 'lib'
+1733813038858	Move 'commons-pool2-2.12.0.jar' to 'lib'
+1733816667009	Delete element
+1733877748679	Copy file
+1733877812968	Move 'style.css' to 'css'
+1733877830541	Delete element
+1733878189058	Move 'style.css' to 'memberone'
+1733878191454	Move 'style.css' to 'css'
+1733878193349	Move 'css' to 'memberone'
+1733879953647	Rename resource 'regFrom.jsp'
+1733880617610	Delete element
+1733882735434	Copy compilation unit
+1733882743714	Rename type 'TempMemberDAO'
+1733882752722	Rename package 'co.kh.dev.memberone'
+1733885197982	Rename compilation unit 'ZipCodeVo.java'
+1733885450685	Delete element
+1733887202312	Copy file
+1733894571992	Delete element
+1733894580953	Rename resource 'zipCheck2.jsp'
+1733896303153	Rename resource 'Zii.jsp'
+1733899935658	Move 'regForm.jsp' to 'Zoo'
+1733899996835	Move 'login.jsp' to 'login'
+1733899997860	Move 'regForm.jsp' to 'login'
+1733900352742	Delete element
+1733902295375	Rename resource 'login.jsp'
+1733902386248	Delete element
+1733902906209	Copy file
+1733902934980	Rename resource 'register.jsp'
+1733904230785	Copy file
+1733962041680	Move 'zipCheck.jsp' to 'Zoo'
+1733962043780	Move 'zipCheck.jsp' to 'login'
+1733962336656	Copy folder
+1733964610735	Move 'img' to 'Zoo'
+1733966738405	Rename resource 'loginProcess.jsp'
+1733967392028	Rename resource 'script.js'
+1733981071768	Copy compilation unit
+1733981075150	Delete element
+1733981082987	Rename type 'StudentDAO'
+1734058250288	Rename resource 'style.css'
+1734060740286	Move 'list.jsp' to 'boardone'
+1734074990842	Rename resource 'writestyle.css'

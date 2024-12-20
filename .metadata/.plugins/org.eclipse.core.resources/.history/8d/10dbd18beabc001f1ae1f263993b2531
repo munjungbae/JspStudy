@@ -1,0 +1,8 @@
+package com.kh.dev.student.control;
+
+public class Snippet {
+	public static void main(String[] args) {
+		MemControlServlet
+	}
+}
+

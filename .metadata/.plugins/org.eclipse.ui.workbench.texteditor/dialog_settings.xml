@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="hasShownOverlayPopupBefore" value="true"/>
+	<item key="replaceBarOpen" value="true"/>
+	<list key="searchhistory">
+		<item value="ID"/>
+		<item value="system"/>
+		<item value="num"/>
+		<item value="reply"/>
+		<item value="user"/>
+		<item value="head"/>
+		<item value="글쓰기"/>
+		<item value="INSERT_SQL"/>
+		<item value="start"/>
+		<item value="작성자"/>
+		<item value="nav"/>
+		<item value="content"/>
+		<item value="email"/>
+		<item value="page"/>
+		<item value="StudentVO"/>
+	</list>
+	<list key="replacehistory">
+		<item value="banner_num"/>
+		<item value="number"/>
+		<item value="BoardVO"/>
+		<item value="memscript.js"/>
+		<item value="register"/>
+		<item value="StudentVO"/>
+	</list>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value=""/>
+		<list key="findhistory">
+			<item value=""/>
+		</list>
+	</section>
+</section>

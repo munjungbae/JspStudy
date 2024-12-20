@@ -1,0 +1,5 @@
+package com.kh.edu.board.action;
+
+public class WriteFormAction {
+
+}

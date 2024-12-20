@@ -1,0 +1,8 @@
+package co.kh.mvc.action;
+
+import java.io.IOException;
+import co.kh.dev.mvc.control.ActionForward;
+
+public interface Action {
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException;
+}

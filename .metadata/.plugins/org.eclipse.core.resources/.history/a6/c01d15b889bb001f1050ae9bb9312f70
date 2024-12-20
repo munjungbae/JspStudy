@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+		<div class="banner_left">
+			<a href="#" target="_self"><i class="fa-solid fa-cat"></i></a> <a
+				href=""><p>동물원</p></a>
+		</div>
+		<div class="banner_right">
+			<ul>
+				<li class="dropdown"><a href="#" class="dropdown_button">매장소개</a>
+					<div class="dropdown_content"></div></li>
+				<li class="dropdown"><a href="#" class="dropdown_button">프로그램</a>
+					<div class="dropdown_content"></div></li>
+				<li class="dropdown"><a href="#" class="dropdown_button">요금/할인</a>
+					<div class="dropdown_content"></div></li>
+				<li class="dropdown"><a href="#" class="dropdown_button">소통/공지</a>
+					<div class="dropdown_content"></div></li>
+			</ul>
+		</div>
+		<div class="input_button">
+			<button type="button" class="ticket">
+				<i class="fa-solid fa-ticket"></i><span>표 구매하기</span>
+			</button>
+			<i class="fa-solid fa-user" onclick="loginWindow()"></i>
+		</div>

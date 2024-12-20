@@ -1,0 +1,74 @@
+package com.kh.dev.student.control;
+
+import com.kh.dev.student.action.Action;
+
+//싱글톤 방식으로 구현 ( 계속해서 호출 할 예정이기 때문 )
+public class ActionFactory {
+	private static ActionFactory factory;
+
+	public static synchronized ActionFactory getInsctance() {
+		if (factory == null) {
+			factory = new ActionFactory();
+		}
+		return factory;
+	}
+
+	private ActionFactory() {
+	}
+
+	public Action getAction(String cmd) {
+		Action action = null;
+
+		if (cmd.equals("/index.do")) {
+//			action = new IndexAction();
+		}
+		return action;
+	}
+
+	public Action getAction(String cmd) {
+		Action action = null;
+		switch (cmd) {
+		case "index":
+		action = new IndexAction();
+		break;
+		case "login":
+		action = new LoginFormAction();
+		break;
+		case "loginProc":
+		action = new LoginProcAction();
+		break;
+		case "logout":
+		action = new LogoutAction();
+		break;
+		case "regForm":
+		action = new RegFormAction();
+		break;
+		case "regProc":
+		action = new RegProcAction();
+		break;
+		case "modifyForm":
+		action = new ModifyFormAction();
+		break;
+		case "modifyProc":
+		action = new ModifyProcAction();
+		break;
+		case "deleteForm":
+		action = new DeleteFormAction();
+		break;
+		case "deleteProc":
+		action = new DeleteProcAction();
+		break;
+		case "idCheck":
+		action = new IdCheckAction();
+		break;
+		case "zipCheck":
+		action = new ZipCheckAction();
+		break;
+		default:
+		action = new IndexAction();
+		break;
+		}
+		return action;
+		}
+		}
+

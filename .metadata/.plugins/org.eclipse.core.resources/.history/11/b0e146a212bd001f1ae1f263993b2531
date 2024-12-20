@@ -1,0 +1,33 @@
+package com.kh.dev.student.action;
+
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.kh.dev.student.control.ActionForward;
+import com.kh.dev.student.model.StudentDAO;
+import com.kh.dev.student.model.StudentVO;
+
+public class ModifyProcAction implements Action {
+
+	@Override
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		
+		request.setCharacterEncoding("UTF-8");
+		StudentDAO dao = StudentDAO.getInstance();
+		String id = request.getParameter("id");
+		String pass = request.getParameter("pass");
+		StudentVO svo = new StudentVO(request.getParameter("id"), request.getParameter("pass"),
+				request.getParameter("name"), request.getParameter("phone1"), request.getParameter("phone2"),
+				request.getParameter("phone3"), request.getParameter("email"), request.getParameter("zipcode"),
+				request.getParameter("address1"), request.getParameter("address2"));
+
+		boolean flag = dao.updateDB(svo);
+		request.setAttribute("flag", flag);
+		request.setAttribute("id", id);
+		request.setAttribute("pass", pass);
+		return new ActionForward("/mvcmem/modifyFrom.jsp", false);
+	}
+
+}

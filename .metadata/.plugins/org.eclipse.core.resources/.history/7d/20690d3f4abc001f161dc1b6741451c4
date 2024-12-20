@@ -1,0 +1,217 @@
+* {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+
+body {
+	width: 1580px;
+	position: absolute;
+	background-color: #f7f7f7;
+	margin: 0 150px;
+}
+
+.banner {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px;
+	margin: 0px 100px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.banner_left {
+	position: relative;
+	list-style: none;
+	display: flex;
+	align-items: center;
+	font-size: 45px;
+	font-weight: 900;
+	left: 10px;
+}
+
+.fa-cat {
+	margin: 0px 10px 0px 0px;
+}
+
+.banner_right ul {
+	position: relative;
+	list-style: none;
+	display: flex;
+	right: 230px;
+	font-size: 20px;
+	font-weight: 900;
+}
+
+.banner_right li {
+	margin: 0px 20px;
+	padding: 20px 0px;
+}
+
+.input_button {
+	display: flex;
+	align-items: center;
+}
+
+.ticket {
+	background-color: #f7f7f7;
+	padding: 7px;
+	border-radius: 50px;
+	font-weight: 900;
+	font-size: 15px;
+	text-align: center;
+}
+
+.fa-ticket {
+	font-size: 15px;
+}
+
+.ticket:hover {
+	border-color: rgba(0, 0, 0, 0.301);;
+	cursor: pointer;
+	font-weight: 900;
+	color: rgba(0, 0, 0, 0.301);
+}
+
+.ticket>span {
+	margin: 0px 0px 0px 5px;
+}
+
+.fa-user {
+	font-size: 25px;
+	margin: 0px 10px 0px 15px;
+}
+
+.fa-user:hover {
+	cursor: pointer;
+	font-weight: 900;
+	color: rgba(0, 0, 0, 0.301);
+}
+
+.img_change {
+	position: relative;
+	height: 513px;
+}
+
+.img_change img {
+	position: relative;
+	top: 15px;
+	width: 88%;
+	height: 100%;
+	border-radius: 30px;
+}
+
+.fa-caret-left {
+	color: rgba(0, 0, 0, 0);
+	position: absolute;
+	padding: 15.7% 8%;
+	top: 15px;
+	left: 6%;
+	z-index: 1;
+	cursor: pointer;
+	border-radius: 30px;
+}
+
+.fa-caret-right {
+	color: rgba(0, 0, 0, 0);
+	position: absolute;
+	padding: 15.7% 6%;
+	top: 15px;
+	right: 6%;
+	z-index: 1;
+	cursor: pointer;
+	border-radius: 30px;
+}
+
+.dropdown_content {
+	position: absolute;
+	display: none;
+	z-index: 2;
+	font-size: 15px;
+	width: 123px;
+	top: 60px;
+}
+
+.dropdown_button:hover {
+	color: rgba(0, 0, 0, 0.301);
+}
+
+.dropdown_content a:hover {
+	background-color: #f7f7f765;
+	color: rgba(0, 0, 0, 0.301);
+	z-index: 2;
+}
+
+.dropdown:hover  .dropdown_content {
+	display: block;
+}
+
+.dropdown:hover .dropdown_content a {
+	display: block;
+}
+
+.dropdown_content a {
+	text-align: left;
+	padding: 5px;
+}
+
+.myPage {
+	list-style: none;
+	margin-left: 10px;
+}
+
+.content {
+	display: flex;
+	position: relative;
+	margin: 40px 270px;
+}
+
+nav {
+	position: relative;
+	margin-right: 10px;
+	width: 200px;
+}
+
+nav h4 {
+	border-bottom: 2px solid rgb(0, 128, 0);
+	padding-bottom: 12px;
+}
+
+nav ul {
+	background-color: rgb(238, 238, 238);
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	list-style: none;
+}
+
+nav li {
+	padding: 5px;
+	font-size: 13px;
+}
+
+nav li:hover {
+	background-color: rgba(114, 114, 114, 0.2);
+}
+
+nav a {
+	color: black;
+}
+.board >table, .board >td {
+	width: 850px;	
+}
+.main_top {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	margin: 5px;
+}
+
+.table_top {
+	border-top: 2px solid rgb(0, 128, 0);
+}

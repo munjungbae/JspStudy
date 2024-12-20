@@ -1,0 +1,48 @@
+package com.kh.edu.board.control;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
+
+import javax.servlet.Servlet;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("*.do")
+public class ControllerServlet extends HttpServlet {
+	// key : ~~~.do, value : 컨트롤 객체, 서비스 객체, DAO객체 를넣는다.
+	// map <key, value>
+	// 부르는 최종 값 /board/list.do=com.kh.edu.board.action.ListAction
+	// 키 값 : "board/list.do", 객체 : Class.Load(com.kh.edu.board.action.ListAction);
+	private Map<String, Object> commandMap = new HashMap<String, Object>();
+
+	public void init(ServletConfig config) throws ServletException {
+		//props =  config.getInitParameter("propertyConfig"); 
+		//web.xmp에 있는 param-name이 propertyConfig이므로  <param-value>CommandPro.properties</param-value> 이 호출
+		String props = config.getInitParameter("propertyConfig");
+		Properties pr = new Properties();
+		FileInputStream f = null;
+		String path = config.getServletContext().getRealPath("/WEB-INF");
+	}
+
+	private void processRequest(HttpServletRequest request, HttpServletResponse response) {
+
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		processRequest(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		processRequest(request, response);
+	}
+
+}
