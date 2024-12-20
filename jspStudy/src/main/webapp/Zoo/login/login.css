@@ -39,6 +39,16 @@ a {
 	left: 10px;
 }
 
+.delete_id {
+	background-color: #f7f7f7;
+	border: none;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.411);
+	height: 35px;
+	width: 200px;
+	font-size: 15px;
+	left: 10px;
+}
+
 .tdicon {
 	text-align: center;
 	font-size: 22px;

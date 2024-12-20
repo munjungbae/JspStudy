@@ -135,38 +135,50 @@ a {
 	position: absolute;
 	background-color: #f7f7f7;
 	display: none;
-	z-index: 2;
-	font-size: 15px;
+	z-index: 0;
+	font-size: 13px;
 	width: 123px;
 	top: 60px;
+	font-weight: 300;
+	border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .dropdown_button:hover {
-	color: rgba(0, 0, 0, 0.301);
+	color: rgba(0, 0, 0, 0.401);
 }
 
 .dropdown_content a:hover {
-	background-color: rgb(247, 247, 247, 0.5);
-	color: rgba(0, 0, 0, 0.301);
+	transition: all .3s;
+	background-color: rgb(38, 78, 2);
+	color: white;
 	z-index: 2;
 }
 
 .dropdown:hover  .dropdown_content {
 	display: block;
+	z-index: 2;
+	transition: all .3s;
 }
 
 .dropdown:hover .dropdown_content a {
+	transition: all .3s;
+	z-index: 2;
 	display: block;
 }
 
 .dropdown_content a {
 	text-align: left;
-	padding: 5px;
+	padding: 8px;
 }
 
+.myPage > li{
+	padding: 20px 5px;
+}
 .myPage {
+	position: relative;
+	font-size: 15px;
+	font-weight: 400;
 	list-style: none;
-	margin-left: 10px;
 }
 
 .content {
@@ -220,54 +232,61 @@ nav a {
 }
 
 .table1 {
-	border: 1px solid black;
 	display: flex;
 	justify-content: space-between;
 	font-size: 15px;
 	font-weight: 700;
 	padding: 5px 0px;
 	font-size: 15px;
-	margin: 0px 0px 0px 35px;
+	margin: 10px 0px 0px 35px;
 }
 
 .table2 {
-	border: 1px solid black;
 	display: flex;
 	justify-content: end;
 	font-weight: 100;
 	font-size: 11px;
-	margin: 0px 0px 0px 35px;
+	margin: 0px 0px 20px 35px;
+}
+
+hr {
+	display: block;
+	color: rgba(0, 0, 0, 0.2);
+	margin: 15px 0px 20px 0px;
+}
+
+.table1 {
+	font-size: 13px;
+	font-weight: 300;
 }
 
 .date {
-	font-size: 11px;
+	font-size: 13px;
 	font-weight: 100;
 }
 
 .table3 {
-	border: 1px solid black;
 	display: flex;
 	font-weight: 700;
-	font-size: 15px;
+	font-size: 20px;
 	padding: 5px 0px;
-	margin: 0px 0px 0px 35px;
+	margin: 15px 0px 0px 35px;
 }
 
 .table4 {
-	border: 1px solid black;
 	display: flex;
 	font-size: 13px;
 	margin: 0px 0px 0px 35px;
 }
 
 .table5 {
-	border: 1px solid black;
 	display: flex;
 	font-size: 13px;
 	margin: 0px 0px 0px 35px;
+	justify-content: end;
 }
 
-.submit, .reset, .list {
+.update, .delete, .list, .reply {
 	background-color: #0f5906;
 	color: white;
 	border: none;
@@ -275,13 +294,15 @@ nav a {
 	height: 35px;
 	font-weight: 1000;
 	cursor: pointer;
-	width: 150px;
+	width: 100px;
 	position: relative;
+	margin: 40px 0px;
 }
 
-.submit:hover, .reset:hover, .list:hover {
+.update:hover, .delete:hover, .list:hover, .reply:hover {
 	color: #0f5906;
 	background-color: #f7f7f7;
+		transition: all .3s;
 }
 
 .register_user, .reset {
@@ -299,13 +320,5 @@ nav a {
 .register_user:active, .reset:active {
 	color: #0f5906;
 	background-color: #f7f7f7;
-}
-
-th {
-	height: 30px;
-	width: 100px;
-}
-
-td {
-	height: 30px;
+		transition: all .3s;
 }

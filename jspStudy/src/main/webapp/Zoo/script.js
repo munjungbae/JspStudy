@@ -30,7 +30,7 @@ function idCheck() {
 		document.register.id.focus();
 	} else {
 		input.nextSibling.textContent = ``;
-		url = "idCheck.jsp?id="
+		url = "idCheck.jsp?id=";
 		window.open(url, "post", "width=500,height=500");
 	}
 }
@@ -80,27 +80,35 @@ function sendAddress(zipcode, sido, gugun, dong, bunji) {
 	self.close();
 }
 
-function sendID(){
-	let value = document.login.id.value;
-	if (value === "") {
-		alert("아이디를 입력해 주세요.");
-		document.login.id.focus();
-		return;
-	}
-		alert("zz");
-		opener.location.reload();
-
+function sendID() {
+	opener.location.reload();
+	self.close();
 }
-/*$("#login_ID").click(function() {
-	var ww = 400;
-	var wh = 250;
+function deletetrue() {
+	opener.location.reload();
+	self.close();
+}
+function deleteWindow() {
+	var left = Math.ceil((window.screen.width - 450) / 2);
+	var top = Math.ceil((window.screen.height - 450) / 2);
+	
+/*	var num = opener.document.getElementById(".num").value;
+	var pageNum = opener.document.getElementById("pageNum").value;
+	const num = opener.document.querySelector('.num').value;
+	const pageNum = opener.document.querySelector('.pageNum').value;*/
+	
+/*	url = "delete.jsp?num="+num+"&pageNum="+pageNum;*/
+	url = "delete.jsp?num=51&pageNum=1";
+	window.open(url, ' ', 'width=' + 450 + ',height=' + 360 + ',left=' + left + ',top=' + top + ',scrollbars=no,resizable=no,toolbar=no,titlebar=no,menubar=no,location=no');
+}
 
-	var top = (screen.availHeight - wh) / 2;
-	var left = (screen.availWidth - ww) / 2;
-
-	window.open("../Zoo.jsp", "window"	'width=' + ww + ", height=" + wh + ", top=" + top + ", left=" + left + ", toolbar=no, menubar=no, scrollbars=no, resizable=no");
-});*/
-
+function deleteSave() {
+	if (document.delForm.pass.value == '') {
+		alert("비밀번호를 입력하십시요.");
+		document.delForm.pass.focus();
+		return false;
+	}
+}
 
 
 function inputCheck() {

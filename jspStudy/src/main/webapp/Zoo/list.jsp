@@ -139,11 +139,11 @@ number = count - (currentPage - 1) * pageSize;
 				<i class="fa-solid fa-ticket"></i><span>구매하기</span>
 			</button>
 			<ul class="myPage">
-				<li class="dropdown"><%=id%>님 환영합니다. <input type="hidden"
-					name="id" value="<%=id%>">
+				<li class="dropdown"><b><%=id%></b>님 환영합니다.
 					<div class="dropdown_content">
 						<a href="#">마이페이지</a> <a href="./login/logout.jsp">로그아웃</a>
 					</div></li>
+			</ul>
 			</ul>
 		</div>
 	</div>

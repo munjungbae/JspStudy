@@ -14,23 +14,20 @@ svo.setPass(pass);
 int check = sdao.selectLoginCheck(svo);
 %>
 <%
-if(id == null) {
-	%>
+if (id == null) {
+%>
 <script>
 	alert("아이디를 입력 해 주세요");
 	history.go(-1);
 </script>
 <%
-	}
+} else {
 if (check == 1) {//로그인 성공
-
 	session.setAttribute("id", id);
 	session.setAttribute("pass", pass);
 %>
-
 <script>
 	sendID()
-	javascript: self.close();
 </script>
 <%
 } else if (check == 0) {//아이디는 있는데 비밀번호 오류
@@ -47,5 +44,6 @@ if (check == 1) {//로그인 성공
 	history.go(-1);
 </script>
 <%
+}
 }
 %>

@@ -1,30 +1,27 @@
-<%@ page contentType="text/html; charset=UTF-8"%>
+<%@page import="co.kh.dev.boardone.model.BoardVO"%>
+<%@page import="co.kh.dev.boardone.model.BoardDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%
-//새로운글로 입력(num=0, ref=0, step=0, depth=0)
-//다른글을 누르고 입력(num=부모값, ref=부모값, step=부모값, depth=부모값)
-int num = 0, ref = 0, step = 0, depth = 0;
+request.setCharacterEncoding("UTF-8");
 String id = (String) session.getAttribute("id");
 String pass = (String) session.getAttribute("pass");
+int num = Integer.parseInt(request.getParameter("num"));
+String pageNum = request.getParameter("pageNum");
+BoardVO vo = new BoardVO();
+vo.setNum(num);
 try {
-	if (request.getParameter("num") != null) {
-		num = Integer.parseInt(request.getParameter("num"));
-		ref = Integer.parseInt(request.getParameter("ref"));
-		step = Integer.parseInt(request.getParameter("step"));
-		depth = Integer.parseInt(request.getParameter("depth"));
-	}
+	BoardDAO bdao = BoardDAO.getInstance();
+	BoardVO article = bdao.selectBoardOneDB(vo);
 %>
+<!DOCTYPE html>
 <html>
 <head>
 <title>문정배</title>
-<script src="https://kit.fontawesome.com/f5a3833180.js" defer
-	crossorigin="anonymous"></script>
-<link href="write.css?timestamp=<%=System.currentTimeMillis()%>"
-	rel="stylesheet" type="text/css" />
-<script language="javascript"
-	src="script.js?timestamp=<%=System.currentTimeMillis()%>">
-	
-</script>
+<link href="write.css" rel="stylesheet" type="text/css">
+<script src="script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
 </head>
+
 <body onload="onload()">
 	<%
 	if (id != null) {
@@ -35,7 +32,7 @@ try {
 			<a href="Zoo.jsp"><p>123</p></a>
 		</div>
 		<div class="banner_right">
-		<ul>
+			<ul>
 				<li class="dropdown"><a href="#" class="dropdown_button">매장소개</a>
 					<div class="dropdown_content">
 						<a href="#">관람 유의사항</a> <a href="#">운영시간</a> <a href="#">매장안내</a>
@@ -79,17 +76,15 @@ try {
 		<div class=write_content>
 			<h4 class="title">자유게시판</h4>
 			<div class="write">
-				<form method="post" name="writeForm" action="writeCheck.jsp">
-					<input type="hidden" name="num" value="<%=num%>"> <input
-						type="hidden" name="ref" value="<%=ref%>"> <input
-						type="hidden" name="step" value="<%=step%>"> <input
-						type="hidden" name="depth" value="<%=depth%>">
+				<form method="post" name="writeform"
+					action="updateCheck.jsp?pageNum=<%=pageNum%>" onsubmit="">
+					<input type="hidden" name="num" value="<%=num%>" />
 					<div class="name_mail">
 						<table>
 							<tr>
 								<!-- 작성자 -->
 								<td><input type="text" name="writer" class="writer"
-									value="<%=id%>" placeholder="작성자 이름" /></td>
+									value="<%=article.getWriter()%>" /></td>
 							</tr>
 						</table>
 						<table>
@@ -103,29 +98,21 @@ try {
 					</div>
 					<table>
 						<tr>
-							<td>
-								<%
-								if (request.getParameter("num") == null) {
-								%> <!-- 제목 --> <input type="text" name="subject" class="subject"
-								placeholder="제목을 입력 해 주세요" /> <%
- } else {
- %> <input type="text" name="subject" value="[답변]" /> <%
- }
- %>
-							</td>
+							<td><input type="text" name="subject" class="subject"
+								value="<%=article.getSubject()%>" /></td>
 						</tr>
 					</table>
 					<table>
 						<!-- 내용 -->
 						<tr>
 							<td><textarea name="content" class="text_area" rows="20"
-									cols="105" placeholder="내용을 입력 해 주세요"></textarea></td>
+									cols="105"><%=article.getContent()%></textarea></td>
 						</tr>
 					</table>
 					<div class="table5">
 						<table>
 							<tr>
-								<td><input type="submit" class="submit" value="작성하기" /> <input
+								<td><input type="submit" class="submit" value="수정하기" /> <input
 									type="reset" class="reset" value="다시작성" /> <input
 									type="button" value="목록" class="list"
 									onClick="window.location='list.jsp'"></td>
@@ -135,8 +122,6 @@ try {
 				</form>
 			</div>
 		</div>
-
-		<!-- 예외처리<2> -->
 		<%
 		} else {
 		%>

@@ -28,7 +28,7 @@ try {
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>문정배</title>
 <script src="https://kit.fontawesome.com/f5a3833180.js" defer
 	crossorigin="anonymous"></script>
 <link href="content.css?timestamp=<%=System.currentTimeMillis()%>"
@@ -38,6 +38,50 @@ try {
 	
 </script>
 </head>
+<body onload="onload()">
+	<%
+	if (id == null) {
+	%>
+	<div class="banner">
+		<div class="banner_left">
+			<a href="Zoo.jsp" target="_self"><i class="fa-solid fa-cat"></i></a>
+			<a href="Zoo.jsp"><p>123</p></a>
+		</div>
+		<div class="banner_right">
+			<ul>
+				<li class="dropdown"><a href="#" class="dropdown_button">매장소개</a>
+					<div class="dropdown_content">
+						<a href="#">관람 유의사항</a> <a href="#">운영시간</a> <a href="#">매장안내</a>
+						<a href="#">오시는길</a>
+					</div></li>
+				<li class="dropdown"><a href="#" class="dropdown_button">체험정보</a>
+					<div class="dropdown_content">
+						<a href="#">프로그램 안내</a> <a href="#">동물정보</a>
+					</div></li>
+				<li class="dropdown"><a href="#" class="dropdown_button">매장정보</a>
+					<div class="dropdown_content">
+						<a href="#">제휴/할인 안내</a> <a href="#">운영시간</a> <a href="#">매장안내</a>
+						<a href="#">오시는길</a>
+					</div></li>
+				<li class="dropdown"><a href="list.jsp" class="dropdown_button">커뮤니티</a>
+					<div class="dropdown_content">
+						<a href="list.jsp">자유게시판</a> <a href="#">자료실</a>
+					</div></li>
+			</ul>
+
+		</div>
+		<div class="input_button">
+			<button type="button" class="ticket">
+				<i class="fa-solid fa-ticket"></i><span>구매하기</span>
+			</button>
+			<i class="fa-solid fa-user" onclick="loginWindow()"></i>
+		</div>
+	</div>
+</body>
+</html>
+<%
+} else {
+%>
 <body onload="onload()">
 	<div class="banner">
 		<div class="banner_left">
@@ -53,12 +97,11 @@ try {
 					</div></li>
 				<li class="dropdown"><a href="#" class="dropdown_button">체험정보</a>
 					<div class="dropdown_content">
-						<a href="#">관람 유의사항</a> <a href="#">운영시간</a> <a href="#">매장안내</a>
-						<a href="#">오시는길</a>
+						<a href="#">프로그램 안내</a> <a href="#">동물정보</a>
 					</div></li>
-				<li class="dropdown"><a href="#" class="dropdown_button">요금/할인</a>
+				<li class="dropdown"><a href="#" class="dropdown_button">매장정보</a>
 					<div class="dropdown_content">
-						<a href="#">관람 유의사항</a> <a href="#">운영시간</a> <a href="#">매장안내</a>
+						<a href="#">제휴/할인 안내</a> <a href="#">운영시간</a> <a href="#">매장안내</a>
 						<a href="#">오시는길</a>
 					</div></li>
 				<li class="dropdown"><a href="list.jsp" class="dropdown_button">커뮤니티</a>
@@ -66,21 +109,22 @@ try {
 						<a href="list.jsp">자유게시판</a> <a href="#">자료실</a>
 					</div></li>
 			</ul>
-
 		</div>
 		<div class="input_button">
 			<button type="button" class="ticket">
 				<i class="fa-solid fa-ticket"></i><span>구매하기</span>
 			</button>
 			<ul class="myPage">
-				<li class="dropdown"><%=id%>님 환영합니다. <input type="hidden"
-					name="id" value="<%=id%>">
+				<li class="dropdown"><b><%=id%></b>님 환영합니다.
 					<div class="dropdown_content">
 						<a href="#">마이페이지</a> <a href="./login/logout.jsp">로그아웃</a>
 					</div></li>
 			</ul>
 		</div>
 	</div>
+	<%
+	}
+	%>
 	<div class="content">
 		<nav>
 			<h4>커뮤니티</h4>
@@ -102,7 +146,8 @@ try {
 				<div class="table1">
 					<table>
 						<tr>
-							<td><%=bvo.getWriter()%></td>
+							<td>작성자 :</td>
+							<td>&nbsp;<%=bvo.getWriter()%></td>
 						</tr>
 					</table>
 					<div class="date">
@@ -121,7 +166,7 @@ try {
 						</tr>
 					</table>
 				</div>
-
+				<hr>
 				<div class="table4">
 					<table>
 						<tr>
@@ -130,16 +175,16 @@ try {
 					</table>
 				</div>
 				<div class="table5">
+					<input type="hidden" value="<%= _num %>" id="num">
+					<input type="hidden" value="<%=pageNum%>" id="pageNum">
 					<table>
 						<tr>
-							<td><input type="button" value="글수정"
+							<td><input type="button" value="글수정" class="update"
 								onclick="document.location.href='update.jsp?num=<%=_num%>&pageNum=<%=pageNum%>'">
-								<input type="button" value="글삭제"
-								onclick="document.location.href='delete.jsp?num=<%=_num%>&pageNum=<%=pageNum%>'">
-								<input type="button" value="답글쓰기"
-								onclick="document.location.href='write.jsp?num=<%=num%>&ref=<%=ref%>&step=<%=step%>&depth=<%=depth%>'">
-								<input type="button" value="글목록"
-								onclick="document.location.href='list.jsp?pageNum=<%=pageNum%>'">
+<%-- 								<input type="button" value="글삭제" class="delete" onclick="document.location.href='delete.jsp?num=<%=_num%>&pageNum=<%=pageNum%>'">  --%>
+								<input type="button" value="글삭제" class="delete" onclick="deleteWindow()"> 
+								<input type="button" value="답글쓰기" class="reply" onclick="document.location.href='write.jsp?num=<%=num%>&ref=<%=ref%>&step=<%=step%>&depth=<%=depth%>'">
+								<input type="button" value="글목록" class="list" onclick="document.location.href='list.jsp?pageNum=<%=pageNum%>'">
 							</td>
 						</tr>
 					</table>
@@ -147,7 +192,6 @@ try {
 			</div>
 		</div>
 	</div>
-
 
 	<%
 	} catch (Exception e) {

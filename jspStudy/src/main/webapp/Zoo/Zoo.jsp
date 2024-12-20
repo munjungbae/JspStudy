@@ -77,12 +77,11 @@ function onload() {
 					</div></li>
 				<li class="dropdown"><a href="#" class="dropdown_button">체험정보</a>
 					<div class="dropdown_content">
-						<a href="#">관람 유의사항</a> <a href="#">운영시간</a> <a href="#">매장안내</a>
-						<a href="#">오시는길</a>
+						<a href="#">프로그램 안내</a> <a href="#">동물정보</a>
 					</div></li>
-				<li class="dropdown"><a href="#" class="dropdown_button">요금/할인</a>
+				<li class="dropdown"><a href="#" class="dropdown_button">매장정보</a>
 					<div class="dropdown_content">
-						<a href="#">관람 유의사항</a> <a href="#">운영시간</a> <a href="#">매장안내</a>
+						<a href="#">제휴/할인 안내</a> <a href="#">운영시간</a> <a href="#">매장안내</a>
 						<a href="#">오시는길</a>
 					</div></li>
 				<li class="dropdown"><a href="list.jsp" class="dropdown_button">커뮤니티</a>
@@ -127,12 +126,11 @@ function onload() {
 					</div></li>
 				<li class="dropdown"><a href="#" class="dropdown_button">체험정보</a>
 					<div class="dropdown_content">
-						<a href="#">관람 유의사항</a> <a href="#">운영시간</a> <a href="#">매장안내</a>
-						<a href="#">오시는길</a>
+						<a href="#">프로그램 안내</a> <a href="#">동물정보</a>
 					</div></li>
-				<li class="dropdown"><a href="#" class="dropdown_button">요금/할인</a>
+				<li class="dropdown"><a href="#" class="dropdown_button">매장정보</a>
 					<div class="dropdown_content">
-						<a href="#">관람 유의사항</a> <a href="#">운영시간</a> <a href="#">매장안내</a>
+						<a href="#">제휴/할인 안내</a> <a href="#">운영시간</a> <a href="#">매장안내</a>
 						<a href="#">오시는길</a>
 					</div></li>
 				<li class="dropdown"><a href="list.jsp" class="dropdown_button">커뮤니티</a>
@@ -140,14 +138,13 @@ function onload() {
 						<a href="list.jsp">자유게시판</a> <a href="#">자료실</a>
 					</div></li>
 			</ul>
-
 		</div>
 		<div class="input_button">
 			<button type="button" class="ticket">
 				<i class="fa-solid fa-ticket"></i><span>구매하기</span>
 			</button>
 			<ul class="myPage">
-				<li class="dropdown"><%=id%>님 환영합니다.
+				<li class="dropdown"><b><%=id%></b>님 환영합니다.
 					<div class="dropdown_content">
 						<a href="#">마이페이지</a> <a href="./login/logout.jsp">로그아웃</a>
 					</div></li>
