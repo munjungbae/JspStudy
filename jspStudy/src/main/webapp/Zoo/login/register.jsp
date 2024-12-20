@@ -4,7 +4,7 @@
 <html>
 <head>
 <title>register</title>
-<link href="./login.css" type="text/css" rel="stylesheet" />
+<link href="login.css" type="text/css" rel="stylesheet" />
 <script language="JavaScript"
 	src="../script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
 <style>

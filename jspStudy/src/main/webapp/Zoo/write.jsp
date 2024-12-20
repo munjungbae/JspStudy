@@ -5,6 +5,8 @@
 int num = 0, ref = 0, step = 0, depth = 0;
 String id = (String) session.getAttribute("id");
 String pass = (String) session.getAttribute("pass");
+String name = (String) session.getAttribute("name");
+
 try {
 	if (request.getParameter("num") != null) {
 		num = Integer.parseInt(request.getParameter("num"));
@@ -35,7 +37,7 @@ try {
 			<a href="Zoo.jsp"><p>123</p></a>
 		</div>
 		<div class="banner_right">
-		<ul>
+			<ul>
 				<li class="dropdown"><a href="#" class="dropdown_button">매장소개</a>
 					<div class="dropdown_content">
 						<a href="#">관람 유의사항</a> <a href="#">운영시간</a> <a href="#">매장안내</a>
@@ -57,13 +59,15 @@ try {
 			</ul>
 		</div>
 		<div class="input_button">
-			<button type="button" class="ticket">
+			<button type="button" class="ticket"
+				onClick="window.location='./ticket/ticket.jsp'">
 				<i class="fa-solid fa-ticket"></i><span>구매하기</span>
 			</button>
 			<ul class="myPage">
-				<li class="dropdown"><b><%=id%></b>님 환영합니다.
+				<li class="dropdown"><b><%=name%></b>님 환영합니다.
 					<div class="dropdown_content">
-						<a href="#">마이페이지</a> <a href="./login/logout.jsp">로그아웃</a>
+						<a href="myPage.jsp" class="my_page">마이페이지</a> <a
+							href="./login/logout.jsp">로그아웃</a>
 					</div></li>
 			</ul>
 		</div>
@@ -89,7 +93,7 @@ try {
 							<tr>
 								<!-- 작성자 -->
 								<td><input type="text" name="writer" class="writer"
-									value="<%=id%>" placeholder="작성자 이름" /></td>
+									value="<%=id%>" readonly="readonly" /></td>
 							</tr>
 						</table>
 						<table>

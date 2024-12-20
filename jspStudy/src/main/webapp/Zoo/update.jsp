@@ -6,6 +6,8 @@
 request.setCharacterEncoding("UTF-8");
 String id = (String) session.getAttribute("id");
 String pass = (String) session.getAttribute("pass");
+String name = (String) session.getAttribute("name");
+
 int num = Integer.parseInt(request.getParameter("num"));
 String pageNum = request.getParameter("pageNum");
 BoardVO vo = new BoardVO();
@@ -54,13 +56,15 @@ try {
 			</ul>
 		</div>
 		<div class="input_button">
-			<button type="button" class="ticket">
+			<button type="button" class="ticket"
+				onClick="window.location='./ticket/ticket.jsp'">
 				<i class="fa-solid fa-ticket"></i><span>구매하기</span>
 			</button>
 			<ul class="myPage">
-				<li class="dropdown"><b><%=id%></b>님 환영합니다.
+				<li class="dropdown"><b><%=name%></b>님 환영합니다.
 					<div class="dropdown_content">
-						<a href="#">마이페이지</a> <a href="./login/logout.jsp">로그아웃</a>
+						<a href="myPage.jsp" class="my_page">마이페이지</a> <a
+							href="./login/logout.jsp">로그아웃</a>
 					</div></li>
 			</ul>
 		</div>

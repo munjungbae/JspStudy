@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 * {
 	box-sizing: border-box;
 	margin: 0px;
@@ -105,8 +107,6 @@ a {
 	width: 88%;
 	height: 100%;
 	border-radius: 30px;
-	transition: all .3s;
-	
 }
 
 .fa-caret-left {
@@ -118,7 +118,6 @@ a {
 	z-index: 1;
 	cursor: pointer;
 	border-radius: 30px;
-	
 }
 
 .fa-caret-right {
@@ -172,15 +171,158 @@ a {
 	padding: 8px;
 }
 
-.myPage > li{
+.myPage>li {
 	padding: 20px 5px;
 }
+
 .myPage {
 	position: relative;
 	font-size: 15px;
 	font-weight: 400;
 	list-style: none;
 }
+
+.content {
+	display: flex;
+	position: relative;
+	margin: 40px 270px;
+}
+
+nav {
+	position: relative;
+	margin-right: 10px;
+	width: 200px;
+}
+
+nav h4 {
+	border-bottom: 2px solid rgb(0, 128, 0);
+	padding-bottom: 14px;
+}
+
+nav ul {
+	background-color: rgb(238, 238, 238);
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	list-style: none;
+}
+
+nav li {
+	padding: 5px;
+	font-size: 13px;
+	height: 30px;
+	text-align: center;
+}
+
+nav li:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+	color: black;
+}
+
+.write {
+	position: relative;
+	width: 850px;
+	border-top: 2px solid rgb(0, 128, 0);
+	display: flex;
+	justify-content: center;
+}
+
+.title {
+	position: relative;
+	margin: 1px 5px 13px 5px;
+}
+
+.subject {
+	width: 775px;
+	height: 35px;
+	margin-left: 35px;
+	background-color: #f7f7f7;
+	border: none;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.411);
+	font-size: 15px;
+	outline: none;
+	text-align: left;
+	font-size: 13px;
+	height: 35px;
+	margin-bottom: 20px;
+}
+
+.text_area {
+	width: 775px;
+	margin-left: 35px;
+	background-color: #f7f7f7;
+	text-align: left;
+	outline: none;
+	font-size: 13px;
+	margin-bottom: 20px;
+}
+
+.table5 {
+	display: flex;
+	font-size: 13px;
+	justify-content: end;
+}
+
+.submit, .reset, .list {
+	background-color: #0f5906;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	height: 35px;
+	font-weight: 1000;
+	cursor: pointer;
+	width: 100px;
+	position: relative;
+	margin: 30px 0px;
+}
+
+.list {
+	margin-right: 32px;
+}
+
+.submit:hover, .reset:hover, .list:hover {
+	transition: all .3s;
+	color: #0f5906;
+	background-color: #f7f7f7;
+}
+
 .my_page {
 	cursor: pointer;
+}
+
+.register {
+	border-top: 2px solid rgb(0, 128, 0);
+	width: 850px;
+	display: flex;
+	flex-direction: column;
+}
+
+.passCheck {
+	text-align: center;
+	margin-top: 50px;
+}
+
+.myPagePass {
+	border: none;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.411);
+	height: 35px;
+	width: 200px;
+	font-size: 15px;
+	left: 10px;
+	background-color: #f7f7f7;
+}
+
+td {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	height: 35px;
+	font-size: 13px;
+}
+
+th {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	height: 35px;
+	font-size: 14px;
+	background-color: rgba(0, 0, 0, 0.1);
 }

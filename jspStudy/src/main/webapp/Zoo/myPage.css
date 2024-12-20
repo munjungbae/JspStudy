@@ -225,31 +225,13 @@ nav a {
 	position: relative;
 	width: 850px;
 	border-top: 2px solid rgb(0, 128, 0);
-}
-
-.name_mail {
-	position: relative;
 	display: flex;
+	justify-content: center;
 }
 
 .title {
 	position: relative;
 	margin: 1px 5px 13px 5px;
-}
-
-.writer, .pass {
-	width: 200px;
-	height: 35px;
-	margin-left: 35px;
-	background-color: #f7f7f7;
-	border: none;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.411);
-	font-size: 15px;
-	outline: none;
-	text-align: left;
-	font-size: 13px;
-	background-color: #f7f7f7;
-	margin: 20px 0px 20px 35px;
 }
 
 .subject {
@@ -301,10 +283,127 @@ nav a {
 }
 
 .submit:hover, .reset:hover, .list:hover {
-		transition: all .3s;
+	transition: all .3s;
 	color: #0f5906;
 	background-color: #f7f7f7;
 }
+
 .my_page {
 	cursor: pointer;
+}
+
+.register {
+	border-top: 2px solid rgb(0, 128, 0);
+	width: 850px;
+	display: flex;
+	flex-direction: column;
+}
+
+.register_id {
+	margin: 50px auto;
+}
+
+.id, .pass, .repass, .name, .email, .zipcode, .address1, .address2 {
+	border: none;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.411);
+	height: 35px;
+	width: 350px;
+	font-size: 15px;
+	left: 10px;
+	background-color: #f7f7f7;
+	margin-top: 10px;
+}
+.passCheck {
+	text-align: center;
+	margin-top: 50px;
+}
+
+.fa-key{
+	font-size: 17px;
+}
+
+.myPagePass {
+	border: none;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.411);
+	height: 35px;
+	width: 200px;
+	font-size: 15px;
+	left: 10px;
+	background-color: #f7f7f7;
+}
+
+.phone2, .phone3 {
+	border: none;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.411);
+	height: 35px;
+	width: 122px;
+	font-size: 15px;
+	left: 10px;
+	background-color: #f7f7f7;
+}
+
+.phone1 {
+	border: none;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.411);
+	width: 70px;
+	height: 35px;
+	background-color: #f7f7f7;
+	font-size: 15px;
+}
+
+.find {
+	position: absolute;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	height: 30px;
+	font-weight: 1000;
+	cursor: pointer;
+	width: 50px;
+	margin: 15px auto;
+	background-color: #0f5906;
+}
+
+.find:active {
+	color: rgba(0, 0, 0, 0.411);
+	background-color: #f7f7f7;
+}
+
+.register_user, .reset {
+	background-color: #0f5906;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	height: 35px;
+	font-weight: 1000;
+	cursor: pointer;
+	width: 173px;
+	margin: 15px auto;
+}
+
+.register_user:active, .reset:active {
+	color: #0f5906;
+	background-color: #f7f7f7;
+}
+
+.footer {
+	display: flex;
+	flex-direction: column;
+}
+
+.login_ID, .register_ID {
+	background-color: #0f5906;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	height: 35px;
+	font-weight: 1000;
+	cursor: pointer;
+	width: 115px;
+	margin: 15px 0px 10px 0px;
+}
+
+.login_ID:active, .register_ID:active {
+	color: #0f5906;
+	background-color: #f7f7f7;
 }
