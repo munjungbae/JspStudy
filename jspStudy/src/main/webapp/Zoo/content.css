@@ -213,7 +213,7 @@ nav li {
 }
 
 nav li:hover {
-	background-color: rgba(0, 0, 0, 0.2);
+	background-color: rgba(0, 0, 0, 0.1);
 }
 
 nav a {
@@ -321,4 +321,7 @@ hr {
 	color: #0f5906;
 	background-color: #f7f7f7;
 		transition: all .3s;
+}
+.my_page {
+	cursor: pointer;
 }

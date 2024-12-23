@@ -9,6 +9,7 @@ int banner_num = (int) Math.floor(Math.random() * (4 - 1 + 1) + 1);
 request.setCharacterEncoding("UTF-8");
 String id = (String) session.getAttribute("id");
 String pass = (String) session.getAttribute("pass");
+String name = (String) session.getAttribute("name");
 %>
 <%
 request.setCharacterEncoding("UTF-8");
@@ -92,7 +93,8 @@ number = count - (currentPage - 1) * pageSize;
 
 		</div>
 		<div class="input_button">
-			<button type="button" class="ticket">
+			<button type="button" class="ticket"
+				onClick="window.location='./ticket/ticket.jsp'">
 				<i class="fa-solid fa-ticket"></i><span>구매하기</span>
 			</button>
 			<i class="fa-solid fa-user" onclick="loginWindow()"></i>
@@ -119,12 +121,11 @@ number = count - (currentPage - 1) * pageSize;
 					</div></li>
 				<li class="dropdown"><a href="#" class="dropdown_button">체험정보</a>
 					<div class="dropdown_content">
-						<a href="#">관람 유의사항</a> <a href="#">운영시간</a> <a href="#">매장안내</a>
-						<a href="#">오시는길</a>
+						<a href="#">프로그램 안내</a> <a href="#">동물정보</a>
 					</div></li>
-				<li class="dropdown"><a href="#" class="dropdown_button">요금/할인</a>
+				<li class="dropdown"><a href="#" class="dropdown_button">매장정보</a>
 					<div class="dropdown_content">
-						<a href="#">관람 유의사항</a> <a href="#">운영시간</a> <a href="#">매장안내</a>
+						<a href="#">제휴/할인 안내</a> <a href="#">운영시간</a> <a href="#">매장안내</a>
 						<a href="#">오시는길</a>
 					</div></li>
 				<li class="dropdown"><a href="list.jsp" class="dropdown_button">커뮤니티</a>
@@ -135,13 +136,15 @@ number = count - (currentPage - 1) * pageSize;
 
 		</div>
 		<div class="input_button">
-			<button type="button" class="ticket">
+			<button type="button" class="ticket"
+				onClick="window.location='./ticket/ticket.jsp'">
 				<i class="fa-solid fa-ticket"></i><span>구매하기</span>
 			</button>
 			<ul class="myPage">
-				<li class="dropdown"><b><%=id%></b>님 환영합니다.
+				<li class="dropdown"><b><%=name%></b>님 환영합니다.
 					<div class="dropdown_content">
-						<a href="#">마이페이지</a> <a href="./login/logout.jsp">로그아웃</a>
+						<a href="myPage.jsp" class="my_page">마이페이지</a> <a
+							href="./login/logout.jsp">로그아웃</a>
 					</div></li>
 			</ul>
 			</ul>
@@ -196,8 +199,7 @@ number = count - (currentPage - 1) * pageSize;
  int wid = 0;
  if (article.getDepth() > 0) {
  	wid = 5 * (article.getDepth());
- %> <img src="images/level.gif" width="<%=wid%>" height="16"> <img
-						src="images/re.gif"> <%
+ %> ┗ <%
  }
  %> <%=article.getSubject()%></a></td>
 				<td><%=article.getWriter()%></td>

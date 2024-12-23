@@ -9,14 +9,4 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
-<!--   <servlet>
-    <description></description>
-    <display-name>memControlServlet</display-name>
-    <servlet-name>memControlServlet</servlet-name>
-    <servlet-class>com.kh.dev.student.control.MemControlServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>memControlServlet</servlet-name>
-    <url-pattern>/memControlServlet</url-pattern>
-  </servlet-mapping> -->
 </web-app>

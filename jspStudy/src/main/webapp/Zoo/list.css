@@ -214,7 +214,7 @@ nav li {
 }
 
 nav li:hover {
-	background-color: rgba(0, 0, 0, 0.2);
+	background-color: rgba(0, 0, 0, 0.1);
 }
 
 nav a {
@@ -271,4 +271,7 @@ th {
 .fa-pencil:hover {
 	background-color: rgba(0, 0, 0, 0.301);
 	
+}
+.my_page {
+	cursor: pointer;
 }

@@ -11,6 +11,7 @@ String name = (String) session.getAttribute("name");
 
 int num = Integer.parseInt(request.getParameter("num"));
 String pageNum = request.getParameter("pageNum");
+request.setAttribute("pageNum", pageNum);
 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
 try {
@@ -36,6 +37,30 @@ try {
 <script language="javascript"
 	src="script.js?timestamp=<%=System.currentTimeMillis()%>">
 	
+</script>
+<script>
+function deleteWindow() {
+	let left = Math.ceil((window.screen.width - 450) / 2);
+	let top = Math.ceil((window.screen.height - 450) / 2);
+	
+	let num = "<%=num%>";
+	let pageNum = "<%=pageNum%>";
+
+		url = "delete.jsp?num=" + num + "&pageNum=" + pageNum;
+		window
+				.open(
+						url,
+						' ',
+						'width='
+								+ 450
+								+ ',height='
+								+ 360
+								+ ',left='
+								+ left
+								+ ',top='
+								+ top
+								+ ',scrollbars=no,resizable=no,toolbar=no,titlebar=no,menubar=no,location=no');
+	}
 </script>
 </head>
 <body onload="onload()">
@@ -71,7 +96,8 @@ try {
 
 		</div>
 		<div class="input_button">
-			<button type="button" class="ticket">
+			<button type="button" class="ticket"
+				onClick="window.location='./ticket/ticket.jsp'">
 				<i class="fa-solid fa-ticket"></i><span>구매하기</span>
 			</button>
 			<i class="fa-solid fa-user" onclick="loginWindow()"></i>
@@ -111,13 +137,15 @@ try {
 			</ul>
 		</div>
 		<div class="input_button">
-			<button type="button" class="ticket">
+			<button type="button" class="ticket"
+				onClick="window.location='./ticket/ticket.jsp'">
 				<i class="fa-solid fa-ticket"></i><span>구매하기</span>
 			</button>
 			<ul class="myPage">
-				<li class="dropdown"><b><%=id%></b>님 환영합니다.
+				<li class="dropdown"><b><%=name%></b>님 환영합니다.
 					<div class="dropdown_content">
-						<a href="#">마이페이지</a> <a href="./login/logout.jsp">로그아웃</a>
+						<a href="myPage.jsp" class="my_page">마이페이지</a> <a
+							href="./login/logout.jsp">로그아웃</a>
 					</div></li>
 			</ul>
 		</div>
@@ -175,16 +203,22 @@ try {
 					</table>
 				</div>
 				<div class="table5">
-					<input type="hidden" value="<%= _num %>" id="num">
-					<input type="hidden" value="<%=pageNum%>" id="pageNum">
+					<form method="post" name="content" action="deleteCheck.jsp">
+						<input type="hidden" value="<%=_num%>" name="num" id="num">
+						<input type="hidden" value="<%=pageNum%>" name="pageNum"
+							id="pageNum">
+					</form>
 					<table>
 						<tr>
 							<td><input type="button" value="글수정" class="update"
 								onclick="document.location.href='update.jsp?num=<%=_num%>&pageNum=<%=pageNum%>'">
-<%-- 								<input type="button" value="글삭제" class="delete" onclick="document.location.href='delete.jsp?num=<%=_num%>&pageNum=<%=pageNum%>'">  --%>
-								<input type="button" value="글삭제" class="delete" onclick="deleteWindow()"> 
-								<input type="button" value="답글쓰기" class="reply" onclick="document.location.href='write.jsp?num=<%=num%>&ref=<%=ref%>&step=<%=step%>&depth=<%=depth%>'">
-								<input type="button" value="글목록" class="list" onclick="document.location.href='list.jsp?pageNum=<%=pageNum%>'">
+								<%-- 								<input type="button" value="글삭제" class="delete" onclick="document.location.href='delete.jsp?num=<%=_num%>&pageNum=<%=pageNum%>'">  --%>
+								<input type="button" value="글삭제" class="delete"
+								onclick="deleteWindow()"> <input type="button"
+								value="답글쓰기" class="reply"
+								onclick="document.location.href='reply.jsp?num=<%=num%>&ref=<%=ref%>&step=<%=step%>&depth=<%=depth%>'">
+								<input type="button" value="글목록" class="list"
+								onclick="document.location.href='list.jsp?pageNum=<%=pageNum%>'">
 							</td>
 						</tr>
 					</table>

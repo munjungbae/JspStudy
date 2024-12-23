@@ -15,14 +15,6 @@ BasketVO bvo = new BasketVO();
 bvo.setId(id);
 
 ArrayList<BasketVO> bList = bdao.selectDB(bvo);
-
-for (BasketVO data : bList) {
-	System.out.println(data.getEmail());
-	System.out.println(data.getName());
-	System.out.println(data.getId());
-	System.out.println(data.getPrice());
-	System.out.println(data.getTitle());
-}
 %>
 <!DOCTYPE html>
 <head>
@@ -133,12 +125,12 @@ if (passValue.equals(pass)) {
 							%>
 							<tbody>
 								<tr>
-									<td><%= data.getName() %></td>
-									<td><%= data.getId() %></td>
-									<td><%= data.getTitle() %></td>
-									<td><%= data.getDate() %></td>
-									<td><%= data.getPrice() %></td>
-									<td><%= data.getEmail() %></td>
+									<td><%=data.getName()%></td>
+									<td><%=data.getId()%></td>
+									<td><%=data.getTitle()%></td>
+									<td><%=data.getDate()%></td>
+									<td><%=data.getPrice()%></td>
+									<td><%=data.getEmail()%></td>
 								</tr>
 							</tbody>
 							<%

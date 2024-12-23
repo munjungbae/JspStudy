@@ -30,7 +30,7 @@ function idCheck() {
 		document.register.id.focus();
 	} else {
 		input.nextSibling.textContent = ``;
-		url = "idCheck.jsp?id=";
+		url = "idCheck.jsp?id=" + value;
 		window.open(url, "post", "width=500,height=500");
 	}
 }
@@ -62,6 +62,12 @@ function zipCheck() {
 	url = "zipCheck.jsp?check=y";
 	window.open(url, "post", 'width=' + 450 + ',height=' + 350 + ',left=' + left + ',top=' + top + 'directories=no,status=yes,scrollbars=yes,menubar=no');
 }
+function zipCheckMy() {
+	var left = Math.ceil((window.screen.width - 750) / 2);
+	var top = Math.ceil((window.screen.height - 650) / 2);
+	url = "./login/zipCheck.jsp?check=y";
+	window.open(url, "post", 'width=' + 450 + ',height=' + 350 + ',left=' + left + ',top=' + top + 'directories=no,status=yes,scrollbars=yes,menubar=no');
+}
 
 function dongCheck() {
 	let value = document.zipForm.dong.value;
@@ -84,23 +90,26 @@ function sendID() {
 	opener.location.reload();
 	self.close();
 }
-function deletetrue() {
+function passCheck() {
 	opener.location.reload();
-	self.close();
 }
-function deleteWindow() {
+
+
+/*function deleteWindow() {
 	var left = Math.ceil((window.screen.width - 450) / 2);
 	var top = Math.ceil((window.screen.height - 450) / 2);
 	
-/*	var num = opener.document.getElementById(".num").value;
-	var pageNum = opener.document.getElementById("pageNum").value;
-	const num = opener.document.querySelector('.num').value;
-	const pageNum = opener.document.querySelector('.pageNum').value;*/
 	
-/*	url = "delete.jsp?num="+num+"&pageNum="+pageNum;*/
-	url = "delete.jsp?num=51&pageNum=1";
+	let num = opener.document.getElementById("num").value;
+	
+	let pageNum = opener.document.getElementById("pageNum").value;
+
+//		var num = opener.document.content.num.value;
+//		var pageNum = opener.document.content.pageNum.value;
+//	url = "delete.jsp?num=" + num + "&pageNum=" + pageNum;
+	url = "delete.jsp?num="+num+"&pageNum="+pageNum;
 	window.open(url, ' ', 'width=' + 450 + ',height=' + 360 + ',left=' + left + ',top=' + top + ',scrollbars=no,resizable=no,toolbar=no,titlebar=no,menubar=no,location=no');
-}
+}*/
 
 function deleteSave() {
 	if (document.delForm.pass.value == '') {
@@ -109,8 +118,14 @@ function deleteSave() {
 		return false;
 	}
 }
+/*function myPageWindow() {
+	var left = Math.ceil((window.screen.width - 450) / 2);
+	var top = Math.ceil((window.screen.height - 450) / 2);
 
-
+	url = "./login/passCheck.jsp";
+	window.open(url, ' ', 'width=' + 450 + ',height=' + 360 + ',left=' + left + ',top=' + top + ',scrollbars=no,resizable=no,toolbar=no,titlebar=no,menubar=no,location=no');
+}
+*/
 function inputCheck() {
 
 	const eMailPattern = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-za-z0-9\-]+/;
@@ -297,20 +312,176 @@ function inputCheck() {
 	document.register.submit();
 }
 
-/*ajax test*/
-/*$(document).ready(funtion(){
-	$(".login").submit(function(event) {
-		event.preventDefault();
-		
-		var id = $(".ID").val();
-		var pwd = $(".pwd").val();
-		
-		$.ajax({
-			url: "/login/login.jsp",
-			type: "POST",
-			data: {id: id, pwd: pwd},
-			dataType:"text",
+function myPageinputCheck() {
 
-		});
-	})
-});*/
+	const eMailPattern = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-za-z0-9\-]+/;
+	let pass = document.register.pass;
+	let repass = document.register.repass;
+	let name = document.register.name;
+	const phone1 = document.register.phone1;
+	const phone2 = document.register.phone2;
+	const phone3 = document.register.phone3;
+	const email = document.register.email;
+	const address1 = document.register.address1;
+	let address2 = document.register.address2;
+	let find = document.register.find;
+	let zipcode = document.register.zipcode;
+
+
+	if (pass.value == "") {
+		pass.nextSibling.textContent = `비밀번호를 입력 해 주세요`;
+		pass.nextSibling.style.fontSize = `13px`;
+		pass.nextSibling.style.display = `flex`;
+		pass.nextSibling.style.position = `relative`;
+		pass.nextSibling.style.right = ``;
+		pass.nextSibling.style.opacity = `0.6`;
+		pass.focus();
+		return;
+	} else {
+		pass.nextSibling.textContent = ``;
+	}
+
+	if (repass.value == "") {
+		repass.nextSibling.textContent = `비밀번호를 입력 해 주세요.`;
+		repass.nextSibling.style.fontSize = `13px`;
+		repass.nextSibling.style.display = `flex`;
+		repass.nextSibling.style.position = `relative`;
+		repass.nextSibling.style.right = ``;
+		repass.nextSibling.style.opacity = `0.6`;
+		repass.focus();
+		return;
+	} else {
+		repass.nextSibling.textContent = ``;
+	}
+	if (pass.value != repass.value) {
+		repass.nextSibling.textContent = `비밀번호가 일치하지 않습니다.`;
+		repass.nextSibling.style.fontSize = `13px`;
+		repass.nextSibling.style.display = `flex`;
+		repass.nextSibling.style.position = `relative`;
+		repass.nextSibling.style.right = ``;
+		repass.nextSibling.style.opacity = `0.6`;
+		repass.focus();
+		return;
+	} else {
+		repass.nextSibling.textContent = ``;
+	}
+
+	if (name.value == "") {
+		name.nextSibling.textContent = `이름을 입력 해 주세요.`;
+		name.nextSibling.style.fontSize = `13px`;
+		name.nextSibling.style.display = `flex`;
+		name.nextSibling.style.position = `relative`;
+		name.nextSibling.style.right = ``;
+		name.nextSibling.style.opacity = `0.6`;
+		document.register.name.focus();
+		return;
+	} else {
+		name.nextSibling.textContent = ``;
+	}
+
+	if (phone1.value == "") {
+		phone3.nextSibling.textContent = `필수 입력란 입니다.`;
+		phone3.nextSibling.style.fontSize = `13px`;
+		phone3.nextSibling.style.display = `flex`;
+		phone3.nextSibling.style.position = `relative`;
+		phone3.nextSibling.style.right = ``;
+		phone3.nextSibling.style.opacity = `0.6`;
+		return;
+	} else {
+		phone3.nextSibling.textContent = ``;
+	}
+
+	if (phone2.value == "") {
+		phone3.nextSibling.textContent = `필수 입력란 입니다.`;
+		phone3.nextSibling.style.fontSize = `13px`;
+		phone3.nextSibling.style.display = `flex`;
+		phone3.nextSibling.style.position = `relative`;
+		phone3.nextSibling.style.right = ``;
+		phone3.nextSibling.style.opacity = `0.6`;
+		phone2.focus();
+		return;
+	} else {
+		phone3.nextSibling.textContent = ``;
+	}
+
+	if (phone3.value == "") {
+		phone3.nextSibling.textContent = `필수 입력란 입니다.`;
+		phone3.nextSibling.style.fontSize = `13px`;
+		phone3.nextSibling.style.display = `flex`;
+		phone3.nextSibling.style.position = `relative`;
+		phone3.nextSibling.style.right = ``;
+		phone3.nextSibling.style.opacity = `0.6`;
+		phone3.focus();
+		return;
+	} else {
+		phone3.nextSibling.textContent = ``;
+	}
+
+	if (email.value == "") {
+		email.nextSibling.textContent = `이메일을 입력 해 주세요.`;
+		email.nextSibling.style.fontSize = `13px`;
+		email.nextSibling.style.display = `flex`;
+		email.nextSibling.style.position = `relative`;
+		email.nextSibling.style.right = ``;
+		email.nextSibling.style.opacity = `0.6`;
+		email.focus();
+		return;
+	} else {
+		email.nextSibling.textContent = ``;
+	}
+
+	if (eMailPattern.test(email.value) === false) {
+		email.nextSibling.textContent = `이메일 주소 형식이 잘못되었습니다.\n\r다시 입력 바랍니다.`;
+		email.nextSibling.style.fontSize = `13px`;
+		email.nextSibling.style.display = `flex`;
+		email.nextSibling.style.position = `relative`;
+		email.nextSibling.style.right = ``;
+		email.nextSibling.style.opacity = `0.6`;
+		email.focus();
+		return;
+	} else {
+		email.nextSibling.textContent = ``;
+	}
+
+	if (zipcode.value == "") {
+		find.nextSibling.textContent = `필수 입력란 입니다.`;
+		find.nextSibling.style.fontSize = `13px`;
+		find.nextSibling.style.display = `flex`;
+		find.nextSibling.style.position = `relative`;
+		find.nextSibling.style.right = ``;
+		find.nextSibling.style.opacity = `0.6`;
+		find.focus();
+		return;
+	} else {
+		find.nextSibling.textContent = ``;
+	}
+
+	if (address1.value == "") {
+		address1.nextSibling.textContent = `주소를 입력해 주세요.`;
+		address1.nextSibling.style.fontSize = `13px`;
+		address1.nextSibling.style.display = `flex`;
+		address1.nextSibling.style.position = `relative`;
+		address1.nextSibling.style.right = ``;
+		address1.nextSibling.style.opacity = `0.6`;
+		address1.focus();
+		return;
+	} else {
+		address1.nextSibling.textContent = ``;
+	}
+
+	if (address2.value == "") {
+		address2.nextSibling.textContent = `세부주소를 입력해 주세요.`;
+		address2.nextSibling.style.fontSize = `13px`;
+		address2.nextSibling.style.display = `flex`;
+		address2.nextSibling.style.position = `relative`;
+		address2.nextSibling.style.right = ``;
+		address2.nextSibling.style.opacity = `0.6`;
+		address2.focus();
+		return;
+	} else {
+		address2.nextSibling.textContent = ``;
+	}
+
+	document.register.submit();
+}
+

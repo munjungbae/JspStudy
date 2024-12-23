@@ -35,11 +35,12 @@ public class StudentDAO {
 				String phone1 = rs.getString("PHONE1");
 				String phone2 = rs.getString("PHONE2");
 				String phone3 = rs.getString("PHONE3");
-				String eMail = rs.getString("E_MAIL");
-				String phone = rs.getString("PHONE");
+				String eMail = rs.getString("EMAIL");
 				String zipcode = rs.getString("ZIPCODE");
 				String address1 = rs.getString("ADDRESS");
 				String address2 = rs.getString("JOB");
+				
+				StudentVO svo = new StudentVO(id, pass, name, phone1, phone2, phone3, eMail, zipcode, address1, address2);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -63,7 +64,6 @@ public class StudentDAO {
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				count = rs.getInt("COUNT");
-
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

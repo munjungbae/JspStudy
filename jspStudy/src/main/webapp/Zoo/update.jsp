@@ -4,6 +4,10 @@
 	pageEncoding="UTF-8"%>
 <%
 request.setCharacterEncoding("UTF-8");
+String idValue = (String) request.getParameter("id");
+String passValue = (String) request.getParameter("pass");
+
+
 String id = (String) session.getAttribute("id");
 String pass = (String) session.getAttribute("pass");
 String name = (String) session.getAttribute("name");

@@ -93,7 +93,7 @@ try {
 							<tr>
 								<!-- 작성자 -->
 								<td><input type="text" name="writer" class="writer"
-									value="<%=id%>" readonly="readonly" /></td>
+									value="<%=name%>" readonly="readonly" /></td>
 							</tr>
 						</table>
 						<table>

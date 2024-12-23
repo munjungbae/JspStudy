@@ -20,7 +20,7 @@ boolean flag = sdao.selectIdCheck(svo);
 </head>
 <body>
 	<%
-	if (flag) {
+	if (flag == true) {
 	%>
 	<script>
 		trueValue();

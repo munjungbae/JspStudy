@@ -30,7 +30,7 @@ function onload() {
 
     function change() {
     	let banner_num = Math.floor(Math.random() * (4 - 1 + 1) + 1);
-            let srcData = "http://localhost:8080/jspStudy/Zoo/img/lulu"+banner_num+".png";
+            let srcData = "http://localhost:8080/jspStudy/Zoo/img/Zoo"+banner_num+".png";
             img.src = srcData;
     }
     intervalID = setInterval(change, 2000);
@@ -104,7 +104,7 @@ function onload() {
 	<aside>
 		<div class="img_change">
 			<i class="fa-solid fa-caret-left"></i> <img
-				src="./img/lulu<%=banner_num%>.png" alt="" class="banner_change">
+				src="./img/Zoo<%=banner_num%>.png" alt="" class="banner_change">
 			<i class="fa-solid fa-caret-right"></i>
 		</div>
 	</aside>
@@ -159,7 +159,7 @@ function onload() {
 	<aside>
 		<div class="img_change">
 			<i class="fa-solid fa-caret-left"></i> <img
-				src="./img/lulu<%=banner_num%>.png" alt="" class="banner_change">
+				src="./img/Zoo<%=banner_num%>.png" alt="" class="banner_change">
 			<i class="fa-solid fa-caret-right"></i>
 		</div>
 	</aside>

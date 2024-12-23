@@ -8,6 +8,7 @@ String pass = (String) session.getAttribute("pass");
 int num = Integer.parseInt(request.getParameter("num"));
 String pageNum = request.getParameter("pageNum");
 %>
+
 <html>
 <head>
 <title>문정배</title>
@@ -17,7 +18,8 @@ String pageNum = request.getParameter("pageNum");
 <script language="JavaScript"
 	src="../script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
 </head>
-</head>
+
+
 <body class="loginBody">
 	<form method="POST" name="delForm"
 		action="deleteCheck.jsp?pageNum=<%=pageNum%>"
@@ -29,12 +31,6 @@ String pageNum = request.getParameter("pageNum");
 				<th>삭제 정보 입력</th>
 			</tr>
 			<tbody>
-				<tr>
-					<td class="tdicon" placeholder="ID"><i
-						class="fa-regular fa-user"></i></td>
-					<td class="tdbody"><input type="text" name="id" class="delete_id"
-						placeholder="ID" /></td>
-				</tr>
 				<tr>
 					<td class="tdicon"><i class="fa-solid fa-key"></i></td>
 					<td class="tdbody"><input type="password" name="pass"

@@ -7,6 +7,7 @@
 request.setCharacterEncoding("UTF-8");
 String id = request.getParameter("id");
 String pass = request.getParameter("pass");
+String name = request.getParameter("name");
 StudentDAO sdao = new StudentDAO();
 StudentVO svo = new StudentVO();
 svo.setId(id);
@@ -23,8 +24,12 @@ if (id == null) {
 <%
 } else {
 if (check == 1) {//로그인 성공
+	StudentVO vo = sdao.selectOneDB(svo);
+	System.out.println(vo.getName());
 	session.setAttribute("id", id);
 	session.setAttribute("pass", pass);
+	session.setAttribute("name", vo.getName());
+	session.setAttribute("email", vo.getEmail());
 %>
 <script>
 	sendID()
@@ -33,7 +38,7 @@ if (check == 1) {//로그인 성공
 } else if (check == 0) {//아이디는 있는데 비밀번호 오류
 %>
 <script>
-	alert("비밀번호가 틀렸습니다");
+	alert("비밀번호가 일치하지 않습니다.");
 	history.go(-1);
 </script>
 <%

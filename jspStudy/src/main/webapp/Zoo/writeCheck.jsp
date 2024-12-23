@@ -3,6 +3,9 @@
 <%@page import="co.kh.dev.boardone.model.BoardDAO"%>
 <%
 request.setCharacterEncoding("UTF-8");
+String id = (String) session.getAttribute("id");
+String pass = (String) session.getAttribute("pass");
+String name = (String) session.getAttribute("name");
 %>
 <jsp:useBean id="vo" scope="page"
 	class="co.kh.dev.boardone.model.BoardVO">
@@ -12,7 +15,6 @@ request.setCharacterEncoding("UTF-8");
 vo.setRegdate(new Timestamp(System.currentTimeMillis()));
 vo.setIp(request.getRemoteAddr());
 BoardDAO bdao = BoardDAO.getInstance();
-session.setAttribute("name", vo.getName());
 boolean flag = bdao.insertDB(vo);
 if (flag == true) {
 	response.sendRedirect("list.jsp");
