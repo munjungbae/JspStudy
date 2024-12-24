@@ -163,7 +163,6 @@ span {
 	background-color: #f7f7f7;
 }
 
-
 .main {
 	display: flex;
 	flex-direction: column;
@@ -179,4 +178,14 @@ span {
 	justify-content: center;
 	align-content: center;
 	font-size: 14px;
+}
+
+.ID {
+	border: none;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.411);
+	height: 35px;
+	width: 200px;
+	font-size: 15px;
+	left: 10px;
+	background-color: #f7f7f7;
 }

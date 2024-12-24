@@ -326,3 +326,8 @@ th {
 	font-size: 14px;
 	background-color: rgba(0, 0, 0, 0.1);
 }
+
+.fa-key {
+	color: black;
+	font-size: 17px;
+}

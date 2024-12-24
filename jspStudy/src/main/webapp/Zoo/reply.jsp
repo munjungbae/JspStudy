@@ -92,7 +92,7 @@ try {
 							<tr>
 								<!-- 작성자 -->
 								<td><input type="text" name="writer" class="writer"
-									value="<%=id%>" placeholder="작성자 이름" /></td>
+									value="<%=name%>" placeholder="작성자 이름" /></td>
 							</tr>
 						</table>
 						<table>
@@ -106,17 +106,8 @@ try {
 					</div>
 					<table>
 						<tr>
-							<td>
-								<%
-								if (request.getParameter("num") == null) {
-								%> <!-- 제목 --> <input type="text" name="subject" class="subject"
-								placeholder="제목을 입력 해 주세요" /> <%
- } else {
- %> <input type="text" name="subject" class="subject"
-								placeholder="답글 제목을 입력 해 주세요" /> <%
- }
- %>
-							</td>
+							<td><input type="text" name="subject" class="subject"
+								placeholder="답글 제목을 입력 해 주세요" /></td>
 						</tr>
 					</table>
 					<table>

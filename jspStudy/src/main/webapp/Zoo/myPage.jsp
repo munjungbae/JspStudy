@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <%
 String id = (String) session.getAttribute("id");
-String pass = (String) request.getParameter("pass");
+String pass = request.getParameter("pass");
 String name = (String) session.getAttribute("name");
 String title = (String) session.getAttribute("title");
 int price = (Integer) session.getAttribute("price");

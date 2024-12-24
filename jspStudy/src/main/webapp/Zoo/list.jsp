@@ -51,7 +51,7 @@ number = count - (currentPage - 1) * pageSize;
 <!DOCTYPE html>
 <html>
 <head>
-<title>게시판</title>
+<title>자유게시판</title>
 <link rel="stylesheet"
 	href="list.css?timestamp=<%=System.currentTimeMillis()%>">
 <script src="https://kit.fontawesome.com/f5a3833180.js" defer

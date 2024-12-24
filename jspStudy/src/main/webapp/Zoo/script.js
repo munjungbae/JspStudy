@@ -95,21 +95,7 @@ function passCheck() {
 }
 
 
-/*function deleteWindow() {
-	var left = Math.ceil((window.screen.width - 450) / 2);
-	var top = Math.ceil((window.screen.height - 450) / 2);
-	
-	
-	let num = opener.document.getElementById("num").value;
-	
-	let pageNum = opener.document.getElementById("pageNum").value;
 
-//		var num = opener.document.content.num.value;
-//		var pageNum = opener.document.content.pageNum.value;
-//	url = "delete.jsp?num=" + num + "&pageNum=" + pageNum;
-	url = "delete.jsp?num="+num+"&pageNum="+pageNum;
-	window.open(url, ' ', 'width=' + 450 + ',height=' + 360 + ',left=' + left + ',top=' + top + ',scrollbars=no,resizable=no,toolbar=no,titlebar=no,menubar=no,location=no');
-}*/
 
 function deleteSave() {
 	if (document.delForm.pass.value == '') {
@@ -118,14 +104,15 @@ function deleteSave() {
 		return false;
 	}
 }
-/*function myPageWindow() {
-	var left = Math.ceil((window.screen.width - 450) / 2);
-	var top = Math.ceil((window.screen.height - 450) / 2);
-
-	url = "./login/passCheck.jsp";
-	window.open(url, ' ', 'width=' + 450 + ',height=' + 360 + ',left=' + left + ',top=' + top + ',scrollbars=no,resizable=no,toolbar=no,titlebar=no,menubar=no,location=no');
+function updateSave() {
+	if (document.upForm.pass.value == '') {
+		alert("비밀번호를 입력하십시요.");
+		document.delForm.pass.focus();
+		return false;
+	}
 }
-*/
+
+
 function inputCheck() {
 
 	const eMailPattern = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-za-z0-9\-]+/;

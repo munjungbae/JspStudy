@@ -11,7 +11,8 @@ String name = (String) session.getAttribute("name");
 
 int num = Integer.parseInt(request.getParameter("num"));
 String pageNum = request.getParameter("pageNum");
-request.setAttribute("pageNum", pageNum);
+session.setAttribute("num", num);
+session.setAttribute("pageNum", pageNum);
 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
 try {
@@ -61,6 +62,40 @@ function deleteWindow() {
 								+ top
 								+ ',scrollbars=no,resizable=no,toolbar=no,titlebar=no,menubar=no,location=no');
 	}
+	
+function updateWindow() {
+	let left = Math.ceil((window.screen.width - 450) / 2);
+	let top = Math.ceil((window.screen.height - 450) / 2);
+	
+
+		url = "updateId.jsp";
+		window
+				.open(
+						url,
+						' ',
+						'width='
+								+ 450
+								+ ',height='
+								+ 360
+								+ ',left='
+								+ left
+								+ ',top='
+								+ top
+								+ ',scrollbars=no,resizable=no,toolbar=no,titlebar=no,menubar=no,location=no');
+	}
+	
+<%-- function updateWindowCheck() {
+	let left = Math.ceil((window.screen.width - 450) / 2);
+	let top = Math.ceil((window.screen.height - 450) / 2);
+	url = "updateCheckId.jsp";
+	if (<%= id%> != null) {
+		alert("로그인 실패연~이용 바랍니다.");
+		return;
+	} else{
+		alert("로그인 후 이용 바랍니다.");
+		return;
+	}
+} --%>
 </script>
 </head>
 <body onload="onload()">
@@ -211,8 +246,7 @@ function deleteWindow() {
 					<table>
 						<tr>
 							<td><input type="button" value="글수정" class="update"
-								onclick="document.location.href='update.jsp?num=<%=_num%>&pageNum=<%=pageNum%>'">
-								<%-- 								<input type="button" value="글삭제" class="delete" onclick="document.location.href='delete.jsp?num=<%=_num%>&pageNum=<%=pageNum%>'">  --%>
+								onclick="updateWindow()">
 								<input type="button" value="글삭제" class="delete"
 								onclick="deleteWindow()"> <input type="button"
 								value="답글쓰기" class="reply"

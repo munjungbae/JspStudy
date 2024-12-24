@@ -184,3 +184,75 @@ a {
 .my_page {
 	cursor: pointer;
 }
+
+.zoo_main {
+	position: relative;
+	top: 70px;
+	left: 178px;
+	width: 1227px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-weight: 600;
+	font-size: 37px;
+}
+.text {
+	position: relative;
+	width: 1227px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 12px;
+}
+
+.img_main1 {
+	position: relative;
+	top: 90px;
+	width: 1000px;
+	height: 500px;
+	border-radius: 15px;
+}
+.img_main2 {
+	position: relative;
+	top: 110px;
+	width: 1000px;
+	height: 500px;
+	border-radius: 15px;
+}
+.img_text2{
+	position: absolute;
+	text-align: left;
+	color: white;
+	left: 290px;
+	width: 1000px;
+	height: 86px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+.img_text1{
+	position: absolute;
+	text-align: left;
+	color: white;
+	left: 290px;
+	width: 1000px;
+	height: 86px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 1704px;
+}
+
+.zoo_content {
+	position: relative;
+	top: 140px;
+	left: 178px;
+	width: 1227px;
+	display: flex;
+	justify-content: center;
+	font-weight: 600;
+	font-size: 30px;
+}

@@ -25,7 +25,6 @@ if (id == null) {
 } else {
 if (check == 1) {//로그인 성공
 	StudentVO vo = sdao.selectOneDB(svo);
-	System.out.println(vo.getName());
 	session.setAttribute("id", id);
 	session.setAttribute("pass", pass);
 	session.setAttribute("name", vo.getName());
