@@ -270,8 +270,23 @@ th {
 
 .fa-pencil:hover {
 	background-color: rgba(0, 0, 0, 0.301);
-	
 }
+
 .my_page {
 	cursor: pointer;
+}
+
+footer {
+	position: relative;
+	text-align: center;
+	border-top: 1px solid rgba(0, 0, 0, 0.101);
+	background-color: rgb(231, 231, 231);
+	width: 1920px;
+	left: -150px;
+	height: 200px;
+	bottom: -295px;
+	font-size: small;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }

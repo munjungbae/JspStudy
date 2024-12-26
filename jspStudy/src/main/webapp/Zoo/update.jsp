@@ -24,7 +24,10 @@ try {
 <html>
 <head>
 <title>문정배</title>
-<link href="write.css" rel="stylesheet" type="text/css">
+<link href="write.css?timestamp=<%=System.currentTimeMillis()%>"
+	rel="stylesheet" type="text/css">
+<script src="https://kit.fontawesome.com/f5a3833180.js" defer
+	crossorigin="anonymous"></script>
 <script src="script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
 </head>
 
@@ -35,7 +38,7 @@ try {
 	<div class="banner">
 		<div class="banner_left">
 			<a href="Zoo.jsp" target="_self"><i class="fa-solid fa-cat"></i></a>
-			<a href="Zoo.jsp"><p>123</p></a>
+			<a href="Zoo.jsp"><p>Zoo</p></a>
 		</div>
 		<div class="banner_right">
 			<ul>
@@ -130,13 +133,14 @@ try {
 				</form>
 			</div>
 		</div>
+
 		<%
 		} else {
 		%>
 		<div class="banner">
 			<div class="banner_left">
 				<a href="Zoo.jsp" target="_self"><i class="fa-solid fa-cat"></i></a>
-				<a href="Zoo.jsp"><p>123</p></a>
+				<a href="Zoo.jsp"><p>Zoo</p></a>
 			</div>
 			<div class="banner_right">
 				<ul>
@@ -238,5 +242,19 @@ try {
 			}
 			%>
 		</div>
+		<footer>
+			<div class="line1">
+				<a href="#">이용약관 |</a> <a href="">개인정보처리방침 |</a> <a href="">법적고지
+					및 주의사항 |</a> <a href="">입점안내</a>
+			</div>
+			<br>
+			<p style="color: rgba(0, 0, 0, 0.596);">본 동물원 홈페이지는 통신판매중개자이며,
+				통신판매의 당사자가 아닙니다. 상품, 상품정보, 거래에 관한 의무와 책임은 판매자에게 있습니다</p>
+
+			<p>사업자등록번호 : 111-11-11111</p>
+			<p>통신판매업신고번호 : 제0001-경기평택-0001호</p>
+			<p>대표이사 : 문정배 | 이메일 : ster12390@naver.com</p>
+			<p>대표전화 : 1555-1555 | 1:1문의 | 호스팅 서비스 제공 : 문정배</p>
+		</footer>
 </body>
 </html>

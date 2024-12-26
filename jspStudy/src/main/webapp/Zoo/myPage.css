@@ -313,12 +313,13 @@ nav a {
 	background-color: #f7f7f7;
 	margin-top: 10px;
 }
+
 .passCheck {
 	text-align: center;
 	margin-top: 50px;
 }
 
-.fa-key{
+.fa-key {
 	font-size: 17px;
 }
 
@@ -406,4 +407,19 @@ nav a {
 .login_ID:active, .register_ID:active {
 	color: #0f5906;
 	background-color: #f7f7f7;
+}
+
+footer {
+	position: relative;
+	text-align: center;
+	border-top: 1px solid rgba(0, 0, 0, 0.101);
+	background-color: rgb(231, 231, 231);
+	width: 1920px;
+	left: -150px;
+	height: 200px;
+	bottom: -320px;
+	font-size: small;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }

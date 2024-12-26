@@ -12,45 +12,29 @@ session.setAttribute("pass", pass);
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>문정배</title>
 <link rel="stylesheet"
-	href="ticket.css?timestamp=<%=System.currentTimeMillis()%>">
+	href="ticketDetail.css?timestamp=<%=System.currentTimeMillis()%>">
 <script src="https://kit.fontawesome.com/f5a3833180.js" defer
 	crossorigin="anonymous"></script>
 <script language="javascript"
 	src="../script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
 </head>
 </script>
-<script>
-	function loginWindow() {
-		var left = Math.ceil((window.screen.width - 450) / 2);
-		var top = Math.ceil((window.screen.height - 450) / 2);
-
-		url = "../login/login.jsp";
-		window
-				.open(
-						url,
-						' ',
-						'width='
-								+ 450
-								+ ',height='
-								+ 360
-								+ ',left='
-								+ left
-								+ ',top='
-								+ top
-								+ ',scrollbars=no,resizable=no,toolbar=no,titlebar=no,menubar=no,location=no');
+<script type="text/javascript">
+	function ticketInsert() {
+		document.capy_detail.submit();
 	}
 </script>
-<body onload="onload()">
-	<%
-	if (id == null) {
-	%>
-	<script>
-		alert("로그인 후 이용 바랍니다.")
-		history.go(-1);
-	</script>
-	<%
-	} else {
-	%>
+
+<%
+if (id == null) {
+%>
+<script>
+	alert("로그인 후 이용 바랍니다.")
+	history.go(-1);
+</script>
+<%
+} else {
+%>
 
 <body onload="onload()">
 	<div class="banner">
@@ -82,7 +66,8 @@ session.setAttribute("pass", pass);
 			</ul>
 		</div>
 		<div class="input_button">
-			<button type="button" class="ticket">
+			<button type="button" class="ticket"
+				onClick="window.location='ticket.jsp'">
 				<i class="fa-solid fa-ticket"></i><span>구매하기</span>
 			</button>
 			<ul class="myPage">
@@ -101,81 +86,39 @@ session.setAttribute("pass", pass);
 }
 %>
 <hr>
-<p class="tema">테마 선택</p>
-<div class="ticket_img">
-	<form method="post" action="basketinsert.jsp" name="ticket">
-		<div class="table1">
-			<table>
-				<tr>
-					<td><a href="#"><img src="./image/capybara.jpg" alt=""
-							class="capy"></a></td>
-				</tr>
-				<div class="linenum1">
-					<p>
-						<b>먹이주기 체험</b>
-					</p>
-				</div>
-				<tr>
-					<td><input type="button" class="submit" value="구매하기" onClick="window.location='ticketDetail.jsp'"></td>
-				</tr>
-			</table>
-		</div>
-	</form>
-	<form method="post" action="basketinsert.jsp" name="ticket">
-		<div class="table2">
-			<table>
-				<tr>
-					<td><a href="#"><img src="./image/cat.jpg" alt=""
-							class="otter"></a></a></td>
-				</tr>
-				<div class="linenum1">
-					<p>
-						<b>맹수 생태 설명회</b>
-					</p>
-				</div>
-				<tr>
-					<td><input type="button" class="submit" value="구매하기" onClick="window.location='ticketDetail2.jsp'"></td>
-				</tr>
-			</table>
-		</div>
-	</form>
-	<form method="post" action="basketinsert.jsp" name="ticket">
-		<div class="table3">
-			<table>
-				<tr>
-					<td><a href="#"><img src="./image/otter.jpg" alt=""
-							class="deer"></a></td>
-				</tr>
-				<div class="linenum1">
-					<p>
-						<b>동물원 두드림 교육</b>
-					</p>
-				</div>
-				<tr>
-					<td><input type="button" class="submit" value="구매하기" onClick="window.location='ticketDetail3.jsp'"></td>
-				</tr>
-			</table>
-		</div>
-	</form>
-	<form method="post" action="basketinsert.jsp" name="ticket">
-		<div class="table4">
-			<table>
-				<tr>
-					<td><a href="#"><img src="./image/penguin.jpg" alt=""
-							class="penguin"></a></td>
-				</tr>
-				<div class="linenum1">
-					<p>
-						<b>일일 훈련사 체험</b>
-					</p>
-				</div>
-				<tr>
-					<td><input type="button" class="submit" value="구매하기" onClick="window.location='ticketDetail4.jsp'"></td>
-				</tr>
-			</table>
-		</div>
-	</form>
-</div>
+<form method="post" action="basketinsert.jsp" name="ticketForm">
+	<input type="hidden" name="price" value=25000> <img
+		src="./image/penguin.jpg" alt="" class="cat_detail">
+	<p class="title">일일 훈련사 체험</p>
+	<p class="price">25000원</p>
+	<p class="detail">상세 옵션을 선택 해 주세요</p>
+	<select name="ticket_list" id="ticket_list">
+		<option disabled hidden selected class="option_value">메뉴를 선택
+			해 주세요</option>
+		<option value="일일 훈련사 체험">일일 훈련사 체험 1인 입장권 25000원</option>
+	</select>
+	<p id="result"></p>
+	<input type="number" class="number_increment" name="number_increment"
+		value="1" min="0"> <input type="submit" value="구매하기"
+		class="submit_detail">
+</form>
+<%
+String ticketName = "일일 훈련사 체험 1인 입장권 25000원";
+%>
+<script>
+	const ticket_list = document.ticketForm.ticket_list;
+	const pobj = document.querySelector('p#result')
+	const price = document.querySelector('p#price_sum')
+	const number = document.querySelector('.number_increment')
+
+	ticket_list.addEventListener("change", check);
+
+	function check() {
+		pobj.textContent = `<%=ticketName%>
+	`;
+		number.style.display = 'inline-block'
+	}
+</script>
 <footer>
 	<div class="line1">
 		<a href="#">이용약관 |</a> <a href="">개인정보처리방침 |</a> <a href="">법적고지 및

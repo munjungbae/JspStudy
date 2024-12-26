@@ -9,12 +9,13 @@ public class BasketVO {
 	private Timestamp date;
 	private String title;
 	private int price;
+	private int count;
 
 	public BasketVO() {
 		super();
 	}
 
-	public BasketVO(String id, String name, String email, Timestamp date, String title, int price) {
+	public BasketVO(String id, String name, String email, Timestamp date, String title, int price, int count) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -22,7 +23,19 @@ public class BasketVO {
 		this.date = date;
 		this.title = title;
 		this.price = price;
+		this.count = count;
 	}
+
+	public BasketVO(String id, String name, String email, String title, int price, int count) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.title = title;
+		this.price = price;
+		this.count = count;
+	}
+
 	
 	public BasketVO(String id, String name, String email, String title, int price) {
 		super();
@@ -31,6 +44,14 @@ public class BasketVO {
 		this.email = email;
 		this.title = title;
 		this.price = price;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
 	}
 
 	public String getId() {

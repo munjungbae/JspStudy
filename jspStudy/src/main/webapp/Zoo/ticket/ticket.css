@@ -293,3 +293,18 @@ img {
 	background-color: #f7f7f7;
 	margin: 20px 0px 20px 35px;
 }
+
+footer {
+	position: relative;
+	text-align: center;
+	border-top: 1px solid rgba(0, 0, 0, 0.101);
+	background-color: rgb(231, 231, 231);
+	top: 250px;
+	width: 1903px;
+	left: -150px;
+	height: 200px;
+	font-size: small;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}

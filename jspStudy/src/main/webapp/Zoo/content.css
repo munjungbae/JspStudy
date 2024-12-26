@@ -171,9 +171,10 @@ a {
 	padding: 8px;
 }
 
-.myPage > li{
+.myPage>li {
 	padding: 20px 5px;
 }
+
 .myPage {
 	position: relative;
 	font-size: 15px;
@@ -302,7 +303,7 @@ hr {
 .update:hover, .delete:hover, .list:hover, .reply:hover {
 	color: #0f5906;
 	background-color: #f7f7f7;
-		transition: all .3s;
+	transition: all .3s;
 }
 
 .register_user, .reset {
@@ -320,8 +321,24 @@ hr {
 .register_user:active, .reset:active {
 	color: #0f5906;
 	background-color: #f7f7f7;
-		transition: all .3s;
+	transition: all .3s;
 }
+
 .my_page {
 	cursor: pointer;
+}
+
+footer {
+	position: relative;
+	text-align: center;
+	border-top: 1px solid rgba(0, 0, 0, 0.101);
+	background-color: rgb(231, 231, 231);
+	width: 1920px;
+	left: -150px;
+	height: 200px;
+	bottom: -205px;
+	font-size: small;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }

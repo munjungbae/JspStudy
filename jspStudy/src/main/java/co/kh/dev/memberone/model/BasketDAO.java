@@ -11,8 +11,8 @@ import co.kh.dev.common.ConnectionPool;
 
 public class BasketDAO {
 
-	private final String SELECT_BASKET_SQL = "SELECT * FROM BASKET WHERE ID = ?";
-	private final String INSERT_BASKET = "INSERT INTO BASKET(ID, NAME, EMAIL, TITLE, PRICE) VALUES(?,?,?,?,?)";
+	private final String SELECT_BASKET_SQL = "SELECT * FROM BASKET WHERE ID = ? ORDER BY \"DATE\" DESC";
+	private final String INSERT_BASKET = "INSERT INTO BASKET(ID, NAME, EMAIL, TITLE, PRICE, COUNT) VALUES(?,?,?,?,?,?)";
 
 	public ArrayList<BasketVO> selectDB(BasketVO vo) {
 		ConnectionPool cp = ConnectionPool.getInstance();
@@ -33,8 +33,9 @@ public class BasketDAO {
 				Timestamp date = rs.getTimestamp("DATE");
 				String title = rs.getString("TITLE");
 				int price = rs.getInt("PRICE");
+				int count = rs.getInt("COUNT");
 
-				bvo = new BasketVO(id, name, eMail, date, title, price);
+				bvo = new BasketVO(id, name, eMail, date, title, price, count);
 				bList.add(bvo);
 			}
 		} catch (SQLException e) {
@@ -57,6 +58,7 @@ public class BasketDAO {
 			pstmt.setString(3, bvo.getEmail());
 			pstmt.setString(4, bvo.getTitle());
 			pstmt.setInt(5, bvo.getPrice());
+			pstmt.setInt(6, bvo.getCount());
 
 			count = pstmt.executeUpdate();
 		} catch (SQLException e) {
