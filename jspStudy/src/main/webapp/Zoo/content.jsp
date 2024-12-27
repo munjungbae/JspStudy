@@ -233,12 +233,12 @@ function updateWindow() {
 					</form>
 					<table>
 						<tr>
-							<td><input type="button" value="글수정" class="update"
+							<td><input type="button" value="수정하기" class="update"
 								onclick="updateWindow()"> <input type="button"
-								value="글삭제" class="delete" onclick="deleteWindow()"> <input
+								value="삭제하기" class="delete" onclick="deleteWindow()"> <input
 								type="button" value="답글쓰기" class="reply"
 								onclick="document.location.href='reply.jsp?num=<%=num%>&ref=<%=ref%>&step=<%=step%>&depth=<%=depth%>'">
-								<input type="button" value="글목록" class="list"
+								<input type="button" value="목록보기" class="list"
 								onclick="document.location.href='list.jsp?pageNum=<%=pageNum%>'">
 							</td>
 						</tr>

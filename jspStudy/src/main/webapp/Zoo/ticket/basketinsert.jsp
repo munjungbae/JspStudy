@@ -24,7 +24,7 @@ BasketVO bvo = new BasketVO(id, name, email, title, priceValue, count);
 <link href="./login.css" rel="stylesheet" type="text/css">
 <main>
 	<%
-	if (title.equals(null) || count <= 0) {
+	if (title == null || count <= 0) {
 	%>
 	<script>
 		alert('메뉴와 수령을 정확하게 선택 해 주세요.');

@@ -301,8 +301,6 @@ public class BoardDAO {
 		Connection con = cp.dbCon();
 		PreparedStatement pstmt = null;
 		int count = 0;
-		System.out.println(vo.getNum());
-		System.out.println(vo.getPass());
 		try {
 			pstmt = con.prepareStatement(DELETE_SQL);
 			pstmt.setInt(1, vo.getNum());

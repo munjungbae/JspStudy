@@ -107,7 +107,7 @@ if (passValue.equals(pass)) {
 			</ul>
 		</nav>
 		<div class=write_content>
-			<h4 class="title">예매 정보 확인</h4>
+			<h4 class="title">예매정보 확인</h4>
 			<div class="registerBody">
 				<form method="post" action="./login/modifyCheck.jsp" name="register">
 					<div class="register">
@@ -201,7 +201,7 @@ if (passValue.equals(pass)) {
 			</ul>
 		</nav>
 		<div class=write_content>
-			<h4 class="title">예매 정보 확인</h4>
+			<h4 class="title">예매정보 확인</h4>
 			<div class="write">
 				<form method="post" name="basket" action="basket.jsp">
 					<div class="passCheck">

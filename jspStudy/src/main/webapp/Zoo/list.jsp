@@ -200,7 +200,8 @@ number = count - (currentPage - 1) * pageSize;
  int wid = 0;
  if (article.getDepth() > 0) {
  	wid = 5 * (article.getDepth());
- %> ┗ <%
+ %> <img src="images/level.gif" width="<%=wid%>" height="16">└
+<%
  }
  %> <%=article.getSubject()%></a></td>
 				<td><%=article.getWriter()%></td>

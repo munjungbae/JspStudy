@@ -282,6 +282,28 @@ nav a {
 	font-size: 13px;
 	justify-content: end;
 }
+/* .table6 {
+	position: relative;
+	left: 35px;
+}
+
+.file_wrap {
+	border: 2px solid #dddddd;
+	width: 100%;
+	position: relative;
+}
+
+.file {
+	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 30px;
+}
+
+.file input [type=file] {
+		background-color: #0f5906;
+} */
 
 .submit, .reset, .list {
 	background-color: #0f5906;
@@ -316,7 +338,7 @@ footer {
 	border-top: 1px solid rgba(0, 0, 0, 0.101);
 	background-color: rgb(231, 231, 231);
 	top: 250px;
-	width: 1920px;
+	width: 1903px;
 	left: -150px;
 	height: 200px;
 	bottom: 0px;

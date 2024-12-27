@@ -99,7 +99,7 @@ if (id == null) {
 	</select>
 	<p id="result"></p>
 	<input type="number" class="number_increment" name="number_increment"
-		value="1" min="0" > <input type="submit" value="구매하기"
+		value="1" min="1" > <input type="submit" value="구매하기"
 		class="submit_detail">
 </form>
 <%

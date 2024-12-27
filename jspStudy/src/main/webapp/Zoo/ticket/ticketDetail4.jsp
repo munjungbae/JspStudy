@@ -82,9 +82,6 @@ if (id == null) {
 
 </body>
 </html>
-<%
-}
-%>
 <hr>
 <form method="post" action="basketinsert.jsp" name="ticketForm">
 	<input type="hidden" name="price" value=25000> <img
@@ -99,7 +96,7 @@ if (id == null) {
 	</select>
 	<p id="result"></p>
 	<input type="number" class="number_increment" name="number_increment"
-		value="1" min="0"> <input type="submit" value="구매하기"
+		value="1" min="1"> <input type="submit" value="구매하기"
 		class="submit_detail">
 </form>
 <%
@@ -133,3 +130,7 @@ String ticketName = "일일 훈련사 체험 1인 입장권 25000원";
 	<p>대표이사 : 문정배 | 이메일 : ster12390@naver.com</p>
 	<p>대표전화 : 1555-1555 | 1:1문의 | 호스팅 서비스 제공 : 문정배</p>
 </footer>
+<%
+}
+%>
+

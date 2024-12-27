@@ -126,6 +126,19 @@ try {
 									cols="105" placeholder="내용을 입력 해 주세요"></textarea></td>
 						</tr>
 					</table>
+					<!-- <div class="table6">
+						<table>
+							<tr>
+								<th class="th_top">첨부파일</th>
+								<td>
+									<div class=file_wrap>
+										<input type="file" class="file" id="file">
+										<label for="file" class="file_label"></label>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div> -->
 					<div class="table5">
 						<table>
 							<tr>
