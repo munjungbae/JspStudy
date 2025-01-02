@@ -52,6 +52,6 @@
     <fullyQualifiedTypeName name="com.kh.dev.student.action.ModifyFormAction"/>
     <fullyQualifiedTypeName name="com.kh.dev.student.action.ModifyProcAction"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
-    <fullyQualifiedTypeName name="java.sql.Timestamp"/>
     <fullyQualifiedTypeName name="co.kh.dev.memberone.model.StudentVO"/>
+    <fullyQualifiedTypeName name="java.sql.Timestamp"/>
 </qualifiedTypeNameHistroy>
