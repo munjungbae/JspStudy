@@ -8,7 +8,6 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import co.kh.dev.common.ConnectionPool;
-import co.kh.dev.memberone.model.StudentVO;
 
 public class BoardDAO {
 	// 1. DAO를 싱글톤 방식으로 변경하는 방법 - 1

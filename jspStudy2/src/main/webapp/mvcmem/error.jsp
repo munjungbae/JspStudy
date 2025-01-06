@@ -15,4 +15,5 @@ response.setStatus(HttpServletResponse.SC_OK);
 	<h4>올바른 요청이 아닙니다!</h4>
 	<a href="index.do">인덱스 돌아가기</a>
 </body>
-</html>s
+</html>
+s

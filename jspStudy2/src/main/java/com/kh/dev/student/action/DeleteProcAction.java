@@ -14,7 +14,7 @@ public class DeleteProcAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		request.setCharacterEncoding("UTF-8");	
+		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("id");
 		String pass = (String) session.getAttribute("pass");
@@ -23,10 +23,10 @@ public class DeleteProcAction implements Action {
 		svo.setId(id);
 		svo.setPass(pass);
 		boolean flag = dao.deleteDB(svo);
-		if(flag==true) {
+		if (flag == true) {
 			session.invalidate();
 		}
-		
+
 		request.setAttribute("flag", flag);
 		return new ActionForward("/mvcmem/deleteProc.jsp", false);
 	}
