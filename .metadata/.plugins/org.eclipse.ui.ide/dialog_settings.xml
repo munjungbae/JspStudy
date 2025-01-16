@@ -28,10 +28,16 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\dev\eclipseWorkspace\ZooMainPage"/>
+			<item value="C:\dev\eclipseWorkspace\Servers"/>
+			<item value="C:\dev\eclipseWorkspace\jspStudy3"/>
+			<item value="C:\dev\eclipseWorkspace\jspStudy2"/>
+			<item value="C:\dev\eclipseWorkspace\ZooPageJsp"/>
+			<item value="C:\dev\eclipseWorkspace\jspStudy"/>
 			<item value="C:\dev\eclipseWorkspace"/>
 		</list>
 		<section name="SmartImportWizard.dialogBounds">
-			<item key="DIALOG_X_ORIGIN" value="386"/>
+			<item key="DIALOG_X_ORIGIN" value="299"/>
 			<item key="DIALOG_Y_ORIGIN" value="104"/>
 			<item key="DIALOG_WIDTH" value="888"/>
 			<item key="DIALOG_HEIGHT" value="629"/>
