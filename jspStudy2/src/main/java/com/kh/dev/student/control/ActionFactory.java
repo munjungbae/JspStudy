@@ -11,6 +11,8 @@ import com.kh.dev.student.action.ModifyProcAction;
 import com.kh.dev.student.action.RegFormAction;
 import com.kh.dev.student.action.RegProcAction;
 import com.kh.dev.student.action.ZipCheckAction;
+import com.kh.dev.student.action.DeleteFormAction;
+import com.kh.dev.student.action.DeleteProcAction;
 
 //싱글톤 방식으로 구현 ( 계속해서 호출 할 예정이기 때문 )
 public class ActionFactory {
@@ -56,12 +58,12 @@ public class ActionFactory {
 		case "/modifyProc.do":
 			action = new ModifyProcAction();
 			break;
-//		case "deleteForm":
-//			action = new DeleteFormAction();
-//			break;
-//		case "deleteProc":
-//			action = new DeleteProcAction();
-//			break;
+		case "/deleteForm.do":
+			action = new DeleteFormAction();
+			break;
+		case "/deleteProc.do":
+			action = new DeleteProcAction();
+			break;
 //		case "idCheck":
 //			action = new IdCheckAction();
 //			break;

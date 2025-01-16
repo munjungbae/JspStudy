@@ -4,7 +4,8 @@
 <head>
 <title>Update Form</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
-<script language="javascript" src="script.js?timestamp=<%= System.currentTimeMillis()%>"></script>
+<script language="javascript"
+	src="script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
 </head>
 <%
 StudentVO svo = (StudentVO) request.getAttribute("svo");

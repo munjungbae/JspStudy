@@ -37,13 +37,13 @@ public class BoardDAO {
 	private final String SELECT_COUNT_SQL = "SELECT COUNT(*) AS COUNT FROM BOARD";
 	private final String SELECT_MAX_NUM_SQL = "select max(num) as NUM from board";
 	private final String SELECT_ONE_SQL = "SELECT * FROM BOARD WHERE NUM = ?";
-	private final String SELECT_PASS_SQL = "select count(*) count from board where num = ? and pass = ?";
+	private final String SELECT_PASS_SQL = "select count(*) as count from board where num = ? and pass = ?";
 
 	private final String INSERT_SQL = "insert into board(num, writer, subject, pass, regdate, ref, step, depth, content) "
 			+ "values(board_seq.nextval,?,?,?,?,?,?,?,?)";
 
 	private final String UPDATE_STEP_SQL = "update board set step=step+1 where ref= ? and step > ?";
-	private final String UPDATE_SQL = "update board set writer= ?, email= ?, subject= ?, content= ? where num= ?";
+	private final String UPDATE_SQL = "update board set writer= ?, subject= ?, content= ? where num= ?";
 	private final String UPDATE_READCOUNT_SQL = "update board set readcount=readcount+1 where num = ?";
 	private final String DELETE_SQL = "DELETE FROM BOARD WHERE NUM = ? AND PASS = ?";
 
@@ -265,7 +265,6 @@ public class BoardDAO {
 			pstmt.setInt(1, bvo.getNum());
 			pstmt.setString(2, bvo.getPass());
 			rs = pstmt.executeQuery();
-
 			if (rs.next()) {
 				passCheckCount = rs.getInt("COUNT");
 			}
@@ -278,10 +277,9 @@ public class BoardDAO {
 			try {
 				pstmt = con.prepareStatement(UPDATE_SQL);
 				pstmt.setString(1, bvo.getWriter());
-				pstmt.setString(2, bvo.getEmail());
-				pstmt.setString(3, bvo.getSubject());
-				pstmt.setString(4, bvo.getContent());
-				pstmt.setInt(5, bvo.getNum());
+				pstmt.setString(2, bvo.getSubject());
+				pstmt.setString(3, bvo.getContent());
+				pstmt.setInt(4, bvo.getNum());
 				count = pstmt.executeUpdate();
 				if (count == 0) {
 					returnValue = 3;
@@ -302,7 +300,6 @@ public class BoardDAO {
 		Connection con = cp.dbCon();
 		PreparedStatement pstmt = null;
 		int count = 0;
-
 		try {
 			pstmt = con.prepareStatement(DELETE_SQL);
 			pstmt.setInt(1, vo.getNum());
@@ -314,7 +311,7 @@ public class BoardDAO {
 			cp.dbClose(con, pstmt);
 		}
 
-		return (count != 0) ? (true) : (false);
+		return (count > 0) ? (true) : (false);
 	}
 
 	public ArrayList<BoardVO> selectStartEndDB(int start, int end) {

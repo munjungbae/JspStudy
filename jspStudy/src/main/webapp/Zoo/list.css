@@ -135,38 +135,51 @@ a {
 	position: absolute;
 	background-color: #f7f7f7;
 	display: none;
-	z-index: 2;
-	font-size: 15px;
+	z-index: 0;
+	font-size: 13px;
 	width: 123px;
 	top: 60px;
+	font-weight: 300;
+	border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .dropdown_button:hover {
-	color: rgba(0, 0, 0, 0.301);
+	color: rgba(0, 0, 0, 0.401);
 }
 
 .dropdown_content a:hover {
-	background-color: rgb(247, 247, 247, 0.5);
-	color: rgba(0, 0, 0, 0.301);
+	transition: all .3s;
+	background-color: rgb(38, 78, 2);
+	color: white;
 	z-index: 2;
 }
 
 .dropdown:hover  .dropdown_content {
 	display: block;
+	z-index: 2;
+	transition: all .3s;
 }
 
 .dropdown:hover .dropdown_content a {
+	transition: all .3s;
+	z-index: 2;
 	display: block;
 }
 
 .dropdown_content a {
 	text-align: left;
-	padding: 5px;
+	padding: 8px;
+}
+
+.myPage>li {
+	padding: 20px 5px;
 }
 
 .myPage {
+	position: relative;
+	font-size: 15px;
+	font-weight: 400;
 	list-style: none;
-	margin-left: 10px;
 }
 
 .content {
@@ -201,7 +214,7 @@ nav li {
 }
 
 nav li:hover {
-	background-color: rgba(0, 0, 0, 0.2);
+	background-color: rgba(0, 0, 0, 0.1);
 }
 
 nav a {
@@ -234,17 +247,16 @@ nav a {
 }
 
 td {
-	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	height: 35px;
 	font-size: 13px;
-
 }
 
 th {
-	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	height: 35px;
 	font-size: 14px;
-	background-color: rgba(0, 0, 0, 0.2);
+	background-color: rgba(0, 0, 0, 0.1);
 }
 
 .fa-pencil {
@@ -255,6 +267,26 @@ th {
 	font-weight: 1000;
 	padding: 7px;
 }
+
 .fa-pencil:hover {
-		background-color: rgba(0, 0, 0, 0.301);
+	background-color: rgba(0, 0, 0, 0.301);
+}
+
+.my_page {
+	cursor: pointer;
+}
+
+footer {
+	position: relative;
+	text-align: center;
+	border-top: 1px solid rgba(0, 0, 0, 0.101);
+	background-color: rgb(231, 231, 231);
+	width: 1920px;
+	left: -150px;
+	height: 200px;
+	bottom: -295px;
+	font-size: small;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }

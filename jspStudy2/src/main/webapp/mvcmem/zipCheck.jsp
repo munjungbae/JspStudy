@@ -6,15 +6,17 @@
 <%
 String check = (String) request.getAttribute("check");
 String dong = (String) request.getAttribute("dong");
-ArrayList<ZipCodeVO> zList = (ArrayList<ZipCodeVO>)request.getAttribute("zipcodeList");
+ArrayList<ZipCodeVO> zList = (ArrayList<ZipCodeVO>) request.getAttribute("zipcodeList");
 int totalList = (int) request.getAttribute("totalList");
 %>
 
 <html>
 <head>
 <title>우편번호검색</title>
-<link href="style.css<%=System.currentTimeMillis()%>" type="text/css" rel="stylesheet" />
-<script language="JavaScript" src="script.js<%=System.currentTimeMillis()%>"></script>
+<link href="style.css<%=System.currentTimeMillis()%>" type="text/css"
+	rel="stylesheet" />
+<script language="JavaScript"
+	src="script.js<%=System.currentTimeMillis()%>"></script>
 <!-- ② -->
 </head>
 <body bgcolor="#FFFFCC">
@@ -25,7 +27,7 @@ int totalList = (int) request.getAttribute("totalList");
 			<table>
 				<tr>
 					<td>동이름 입력 : <input name="dong" type="text"> <input
-						type="button" value="검색" onclick="dongCheck()"/>
+						type="button" value="검색" onclick="dongCheck()" />
 					</td>
 				</tr>
 			</table>

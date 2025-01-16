@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Log in</title>
-<link href="./login.css" type="text/css" rel="stylesheet" />
+<title>register</title>
+<link href="login.css" type="text/css" rel="stylesheet" />
 <script language="JavaScript"
 	src="../script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
 <style>

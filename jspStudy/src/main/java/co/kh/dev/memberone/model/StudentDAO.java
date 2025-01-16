@@ -11,6 +11,7 @@ import co.kh.dev.common.ConnectionPool;
 public class StudentDAO {
 	private final String SELECT_ID_SQL = "SELECT COUNT(*) AS COUNT FROM STUDENT WHERE ID = ?";
 	private final String SELECT_LOGIN_SQL = "SELECT * FROM STUDENT WHERE ID = ?";
+
 	private final String SELECT_ZIPCODE_SQL = "SELECT ZIPCODE, SIDO, GUGUN, DONG, BUNJI FROM ZIPCODE WHERE DONG LIKE ?";
 	private final String INSERT_STUDENT = "INSERT INTO STUDENT VALUES(?,?,?,?,?,?,?,?,?,?)";
 	private final String UPDATE_STUDENT = "UPDATE STUDENT SET PASS=?, PHONE2=?, PHONE3=?, EMAIL=?, ZIPCODE=?, ADDRESS1=?, ADDRESS2=? WHERE ID = ?";
@@ -34,11 +35,12 @@ public class StudentDAO {
 				String phone1 = rs.getString("PHONE1");
 				String phone2 = rs.getString("PHONE2");
 				String phone3 = rs.getString("PHONE3");
-				String eMail = rs.getString("E_MAIL");
-				String phone = rs.getString("PHONE");
+				String eMail = rs.getString("EMAIL");
 				String zipcode = rs.getString("ZIPCODE");
 				String address1 = rs.getString("ADDRESS");
 				String address2 = rs.getString("JOB");
+				
+				StudentVO svo = new StudentVO(id, pass, name, phone1, phone2, phone3, eMail, zipcode, address1, address2);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -62,7 +64,6 @@ public class StudentDAO {
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				count = rs.getInt("COUNT");
-
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

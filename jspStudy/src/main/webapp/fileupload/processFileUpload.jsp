@@ -27,17 +27,18 @@ if (FileUpload.isMultipartContent(request)) {
 		FileItem fileItem = (FileItem) fileItemList.get(i);
 		//4-2 fileItem이 폼파라미터에서 보내온 <input type="file" ... > 이 아닌것만 찾음
 		if (fileItem.isFormField()) {// 파일 이외의 파라미터
-		  out.println("폼 파라미터:"); 	
-		  out.println(fileItem.getFieldName() +" = "+ fileItem.getString()+"<br>");
-		//4-3 fileItem이 <input type="file" ... > 일 경우
-		} else { 
-	out.println("파일:"); 
-	out.println(fileItem.getFieldName() +" = "+ fileItem.getString()+"(" +fileItem.getSize() +"bytes) <br>");
+	out.println("폼 파라미터:");
+	out.println(fileItem.getFieldName() + " = " + fileItem.getString() + "<br>");
+	//4-3 fileItem이 <input type="file" ... > 일 경우
+		} else {
+	out.println("파일:");
+	out.println(
+			fileItem.getFieldName() + " = " + fileItem.getString() + "(" + fileItem.getSize() + "bytes) <br>");
 	//5. 메모리에 저장되어있는지 확인, 아닐 시 디스크에 저장되어있음.
 	if (fileItem.isInMemory()) {
-		out.println("메모리에 저장 <br>"); 
+		out.println("메모리에 저장 <br>");
 	} else {
-		out.println("디스크에 저장 <br>"); 
+		out.println("디스크에 저장 <br>");
 	}
 	// upload 의 위치를 알려준다.
 	String filepath = application.getRealPath("upload");
@@ -52,8 +53,8 @@ if (FileUpload.isMultipartContent(request)) {
 		//subString() 지정위치만큼 잘라내기
 		String fileName = fileItem.getName().substring(idx + 1);
 		try {
-		//filePath = String filepath = application.getRealPath("upload");
-		//new file(upload/orange.png);
+			//filePath = String filepath = application.getRealPath("upload");
+			//new file(upload/orange.png);
 			File uploadedFile = new File(filepath, fileName);
 			// D://temp/orange.png => /jspStudy/upload/orange.png 
 			fileItem.write(uploadedFile);

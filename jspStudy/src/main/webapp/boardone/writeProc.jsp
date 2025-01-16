@@ -9,6 +9,9 @@ request.setCharacterEncoding("UTF-8");
 </jsp:useBean>
 
 <%
+String name = (String) request.getAttribute("name");
+System.out.println(name);
+session.setAttribute("name", name);
 vo.setRegdate(new Timestamp(System.currentTimeMillis()));
 vo.setIp(request.getRemoteAddr());
 BoardDAO bdao = BoardDAO.getInstance();
